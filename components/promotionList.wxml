@@ -1,0 +1,19 @@
+<!--components/promotionList.wxml-->
+<view class="promotion_list_box">
+  <view class="promotion_item" wx:for="{{list}}" wx:key="index">
+    <!-- <block wx:if="{{(phone == null || phone == '') && is_click == false}}">
+      <user-phone bind:myphone="getUserPhone">
+        <view class="item_box" catch:tap="clickItem" data-index="{{index}}" data-item="{{item}}">
+          <view class="img"><image src="{{item.icon}}" mode="widthFix"></image></view>
+          <text>{{item.title}}</text>
+        </view>
+      </user-phone>
+    </block>
+    <block wx:else> -->
+      <view class="item_box" catch:tap="clickItem" data-index="{{index}}" data-item="{{item}}">
+        <view class="img"><image src="{{item.icon}}" mode="widthFix"></image></view>
+        <text>{{item.title}}</text>
+      </view>
+    <!-- </block> -->
+  </view>
+</view>

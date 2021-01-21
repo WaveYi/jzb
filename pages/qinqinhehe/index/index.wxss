@@ -1,0 +1,97 @@
+.title {
+  font-size: 36rpx !important;
+  color: #fff !important;
+}
+
+.navBar {
+  background: #212121 !important;
+}
+
+.image {
+  width: 100%;
+  margin-top: 128rpx;
+  height: calc(100vh - 128rpx);
+  display: block;
+}
+
+page {
+  overflow: hidden;
+}
+
+.userInfo {
+  position: fixed;
+  bottom: 218rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 20rpx;
+  right: 30rpx;
+  line-height: 110rpx;
+  overflow: hidden;
+}
+.userInfo1 {
+  position: fixed;
+  bottom: 418rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 20rpx;
+  right: 30rpx;
+  line-height: 110rpx;
+  overflow: hidden;
+}
+.userInfo2 {
+  position: fixed;
+  bottom: 618rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 20rpx;
+  right: 30rpx;
+  line-height: 110rpx;
+  overflow: hidden;
+}
+.userInfo3 {
+  position: fixed;
+  bottom: 818rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 20rpx;
+  right: 30rpx;
+  line-height: 110rpx;
+  overflow: hidden;
+}
+.userInfo4 {
+  position: fixed;
+  bottom: 1018rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 20rpx;
+  right: 30rpx;
+  line-height: 110rpx;
+  overflow: hidden;
+}
+
+.custom-class {
+  border: none !important;
+}
+
+.scanCode {
+  position: fixed;
+  bottom: 70rpx;
+  width: 80%;
+  left: calc(50% - 40%);
+  line-height: 88rpx;
+}

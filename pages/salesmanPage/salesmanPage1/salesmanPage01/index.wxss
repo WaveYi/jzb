@@ -1,0 +1,6 @@
+/* pages/salesmanPage/salesmanPage1/salesmanPage01/index.wxss */
+.buttton{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 20rpx;
+}

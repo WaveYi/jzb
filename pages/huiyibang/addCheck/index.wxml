@@ -1,0 +1,59 @@
+<!--pages/huiyibang/addCheck/index.wxml-->
+<view class="form_box">
+  <form bindsubmit="submitForm">
+    <view class="title">{{title}}</view>
+    <view class="form_item">
+      <view class="form_txt">企业名称 <text wx:if="{{verify1 == true}}">*</text></view>
+      <view class="form_content"><input placeholder="请输入企业名称" value="{{company_name}}" data-key="company_name" bindinput="getInputVal"></input></view>
+    </view>
+    <view class="form_item">
+      <view class="form_txt">真实名字 <text wx:if="{{verify2 == true}}">*</text></view>
+      <view class="form_content"><input placeholder="请输入真实名字" value="{{person_name}}" data-key="person_name" bindinput="getInputVal"></input></view>
+    </view>
+    <view class="form_item">
+      <view class="form_txt">联系方式 <text wx:if="{{verify5 == true}}">*</text></view>
+      <view class="form_content" style="background: #f6f6f6;"><input placeholder="请输入联系方式" style="color: #666666;" disabled type="number" maxlength="11" value="{{person_phone}}" data-key="person_phone" bindinput="getInputVal"></input></view>
+    </view>
+    <view class="form_item">
+      <view class="form_txt">邮箱 <text wx:if="{{verify3 == true}}">*</text></view>
+      <view class="form_content"><input placeholder="请输入邮箱" value="{{person_email}}" data-key="person_email" bindinput="getInputVal"></input></view>
+    </view>
+    <!-- <view class="form_item">
+      <text class="form_txt">微信号</text>
+      <view class="form_content"><input placeholder="请输入微信号" type="number" value="{{wechat_number}}" data-key="wechat_number" bindinput="getInputVal"></input></view>
+    </view> -->
+    <view class="form_item">
+      <view class="form_txt">收货地址 <text wx:if="{{verify4 == true}}">*</text></view>
+      <view class="form_content"><input placeholder="请输入收货地址" value="{{address}}" data-key="address" bindinput="getInputVal"></input></view>
+    </view>
+    <!-- <view class="form_item">
+      <view class="form_txt">职位 <text wx:if="{{verify6 == true}}">*</text></view>
+      <view class="form_content">
+        <picker mode="selector" range="{{position}}" range-key="val" bindchange="bindPickerChange">
+          <view class="picker">
+            {{position_index?position[position_index].val:'请选择职位'}}
+          </view>
+        </picker>
+      </view>
+    </view> -->
+
+    <!-- <view class="form_item" wx:if="{{is_show_table_info && is_from==0}}">
+      <text class="form_txt">桌子信息</text>
+      <view class="form_content noborder">
+        <view>桌子编号：{{table_number?table_number:'等待验证促销券后，生成桌子编号，请稍后关注。'}}</view>
+      </view>
+    </view> -->
+    <!-- <view class="form_item">
+      <text class="form_txt">收货地址</text>
+      <view class="form_content noborder">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+          <view class="picker">
+            当前选择：{{region[0]}} - {{region[1]}} - {{region[2]}}
+          </view>
+        </picker>
+      </view>
+    </view> -->
+    <button form-type="submit" type="primary" style="margin-top: 80rpx;" wx:if="{{is_from==0}}">{{is_edit==0?'提交':'修改'}}</button>
+    <button form-type="submit" type="primary" style="margin-top: 80rpx;" wx:else>提交</button>
+  </form>
+</view>

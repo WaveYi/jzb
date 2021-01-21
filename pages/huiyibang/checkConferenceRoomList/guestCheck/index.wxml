@@ -1,0 +1,10 @@
+<!--pages/huiyibang/checkConferenceRoomList/guestCheck/index.wxml-->
+<text>pages/huiyibang/checkConferenceRoomList/guestCheck/index.wxml</text>
+<view class="content">
+  <view class="module">
+    <view class="module_title">
+      
+    </view>
+    <view class="module_list"></view>
+  </view>
+</view>

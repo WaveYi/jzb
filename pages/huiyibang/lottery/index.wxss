@@ -1,0 +1,127 @@
+/* pages/huiyibang/lottery/index.wxss */
+.cont {
+  width: 100%;
+  height: 100%;
+}
+ 
+.luck-draw {
+  position: relative;
+  top: 20rpx;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+}
+ 
+.draw-img {
+  position: relative;
+  top: 30rpx;
+  width: 700rpx;
+  height: 479rpx;
+}
+ 
+.show-draw {
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom:190rpx;
+  background-color: #ff6600;
+  border-radius: 10rpx;
+  color: #ffffff;
+  font-size: 34rpx;
+  text-align: center;
+}
+ 
+.content {
+display:flex;
+justify-content:space-between;
+position:absolute;
+width:68%;
+left:50%;
+transform: translateX(-50%);
+height:205rpx;
+top: 550rpx;
+border-radius:10rpx;
+}
+ 
+.content .line {
+  /* width: 167rpx; */
+  width: 100%;
+  height: 201rpx;
+  border-radius: 14rpx;
+  overflow: hidden;
+  position: relative;
+  background-color: #ffffff;
+}
+.content .line .box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 201rpx;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  color: #333333;
+  font-size: 34rpx;
+  font-weight: bold;
+  overflow: hidden;
+}
+ 
+/* .content .line image { */
+  /* width: 167rpx; */
+/* } */
+ 
+.content .line .default-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.default-img image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.vote_info{
+  font-size: 28rpx;
+  text-align: left;
+}
+.gift-img{
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  background-color: #ff6600;
+}
+.gift-img view{
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gift-img .avatar_img{
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.vote_backimg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+
+.scroll-container{
+  overflow: hidden;
+}
+.scroll-text{
+  font-weight: bold;
+}

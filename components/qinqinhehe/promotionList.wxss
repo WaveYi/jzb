@@ -1,0 +1,51 @@
+/* components/promotionList.wxss */
+.promotion_list_box{
+  width: 100%;
+  padding: 60rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /* position: absolute;
+  left: 0;
+  bottom: 30rpx; */
+}
+.promotion_list_box.center{
+  justify-content: center;
+}
+.promotion_list_box .promotion_item{
+  width: 30%;
+  margin-right: 5%;
+}
+.promotion_list_box .promotion_item:nth-child(3n){
+  margin-right: 0;
+}
+.promotion_list_box .promotion_item .item_box{
+  /* width: 200rpx; */
+  padding: 5rpx 5rpx 20rpx;
+  box-sizing: border-box;
+  /* background: rgba(2, 167, 240,1); */
+  background: #ffffff;
+  border-radius: 20rpx;
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+.promotion_list_box .promotion_item .img{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.promotion_list_box .promotion_item image{
+  max-width: 100rpx;
+  max-height: 100rpx;
+}
+.promotion_list_box .promotion_item text{
+  display: block;
+  /* color: #ffffff; */
+  color: #333333;
+  font-size: 25rpx;
+}

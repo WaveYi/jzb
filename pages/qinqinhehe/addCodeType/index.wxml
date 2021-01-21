@@ -1,0 +1,17 @@
+<!--pages/addCodeType/index.wxml-->
+<view class="form_box">
+  <view class="form_item">
+    <text class="form_txt">类型名称</text>
+    <view class="form_content"><input placeholder="请输入类型名称" value="{{type_name}}" bindinput="getTypeName"></input></view>
+  </view>
+  <view class="form_item">
+    <text class="form_txt">背景图</text>
+    <view class="form_content noborder">
+      <view class="add_box" bindtap="chooseLicense">
+        <text wx:if="{{is_code_img == 0}}">+</text>
+        <image wx:else src="{{code_img}}" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+  <button type="primary" bindtap="submit">提交</button>
+</view>

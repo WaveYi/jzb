@@ -1,0 +1,29 @@
+<!--pages/promotion/index.wxml-->
+<view>
+  <view class="qqhh_promotion_box">
+    <image class="back_img" src="{{back_img}}" mode="aspectFill"></image>
+    <!-- <block wx:if="{{identity == 21 || identity == 31}}">
+      <picker class="business_picker" bindchange="bindPickerChange" range-key="businessName" value="{{bus_index}}" range="{{myBusinessList}}">
+        <view class="my_business_box">所属公司：{{select_business}}</view>
+      </picker>
+    </block> -->
+    <view class="person_box">
+      <!-- <view class="person_info_box">
+        <user-btn bind:mylogin="getUserLogin">
+          <view class="person_avatar"><image src="{{avatar}}" mode="widthFix"></image></view>
+          <view class="person_name">权益生成-老板</view>
+        </user-btn>
+      </view> -->
+      
+      <view>
+        <promotion-list list="{{promotion_list}}" has_user="{{has_user}}" phone="{{phone}}" identity="{{identity}}" bind:myevent="getListClick" bind:myshow="getOnShow"></promotion-list>
+      </view>
+
+      <van-popup show="{{ show }}" bind:close="onClose">
+        <image src="{{company_code}}" mode="widthFix"></image>
+      </van-popup>
+      
+      <!-- <view class="mine" catchtap="toUser"><image src="../../assets/mine.png" mode="widthFix"></image></view> -->
+    </view>
+  </view>
+</view>

@@ -1,0 +1,115 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.nav_tab_box{
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav_tab_box .nav_item{
+  width: 40%;
+  text-align: center;
+  color: #000;
+  font-size: 30rpx;
+  border: 1px solid #737c81;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  border-radius: 20rpx 20rpx 0 0;
+}
+.nav_tab_box .nav_item.active{
+  background: rgba(55, 68, 74, 1);
+  color: #fff;
+}
+
+.nav_content_box{
+  padding: 0 30rpx;
+  max-height: 80vh;
+  box-sizing: border-box;
+}
+.nav_content_box .content_item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+.nav_content_box .content_item .head_left{
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nav_content_box .content_item .head_left image{
+  display: block;
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.nav_content_box .content_item .head_left view{
+  color: #333;
+  max-width: 200rpx;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nav_content_box .content_item .info_right{
+  width: 58%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav_content_box .content_item .info_right .info_time{
+  color: #999999;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.nav_content_box .content_item .info_right .info_btn{
+  text-align: right;
+  width: 50%;
+}
+.nav_content_box .content_item .info_right .info_btn text{
+  display: block;
+  color: #999999;
+}
+.nav_content_box .content_item .info_right .info_btn button{
+  font-size: 24rpx;
+}
+
+.no_data_txt{
+  color: #cccccc;
+  font-size: 30rpx;
+  text-align: center;
+  padding-top: 150rpx;
+  padding-bottom: 150rpx;
+}

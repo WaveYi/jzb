@@ -1,0 +1,26 @@
+<view wx:if="{{dataList.length==0}}" class="noVideo">
+  <view>
+    <van-icon size="200rpx" name="/assets/noVideo.svg" />
+    <text>您还没有视频</text>
+  </view>
+</view>
+
+<view wx:else class="videoList">
+  <view wx:for="{{dataList}}" wx:for-item="item" wx:for-index="index" wx:key="index" class="clear videoItem">
+    <view class="fl image">
+      <van-image width="150rpx" fit="cover" height="150rpx" src="{{item.imageUrl}}" />
+    </view>
+    <view class="fr text">
+      <view class="lable">产品名称：
+        <text class="conter">{{item.name?item.name:''}}</text>
+      </view>
+      <view class="lable">
+        二维码ID：
+        <text class="conter">{{item.codeId}}</text>
+      </view>
+      <view style="text-align:right;">
+        <van-button custom-class="buttons" data-row="{{item}}" bind:click="toChangeVideo" color="#37444A">更换视频内容</van-button>
+      </view>
+    </view>
+  </view>
+</view>

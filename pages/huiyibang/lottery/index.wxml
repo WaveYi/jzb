@@ -1,0 +1,41 @@
+<!--pages/huiyibang/lottery/index.wxml-->
+<view class="cont">
+  <!-- 底部抽奖 -->
+  <image src="https://h.3p3.top/upload/2012037646371186.jpg" class="vote_backimg"></image>
+  <view class='luck-draw' wx:if="{{luckDrawID==1}}">
+  <image class='draw-img' src='{{bg}}'></image>
+  <view class='show-draw' wx:if="{{drawId==1}}" bindtap='getAnmiation'>点击抽奖</view>
+  <view class='show-draw' wx:else bindtap="btnDisable">点击抽奖</view>
+  <view class='content'>
+        <view class='line'>
+          <view wx:if='{{!showDefault}}' class="box">
+              <view class="gift-img">
+                <view class="" wx:for="{{vote_person}}" wx:key="*this" animation="{{animationData}}">
+                  <image class="avatar_img" src="{{item.headUrl}}"></image>
+                </view>
+              </view>
+            <!-- <view class="gift-img">
+              <image wx:for="{{vote_person}}" wx:key="index" src="{{item.headUrl}}" animation="{{animationData1}}" bindtransitionend="getOpenAnimation"></image>
+            </view> -->
+          </view>
+          <view class='box default-img' wx:if='{{showDefault}}'>
+            <image src="{{voteInfo.headUrl}}" mode="widthFix"></image>
+            <view class="vote_info">
+              <view>昵称：{{voteInfo.nickname?voteInfo.nickname:voteInfo.userName}}</view>
+              <view>手机号：{{voteInfo.phone}}</view>
+              <view wx:if="{{voteInfo.enterpriseName}}">企业：{{voteInfo.enterpriseName}}</view>
+              <view style="color: #ff0000;" wx:if="{{voteInfo.name}}">名字：{{voteInfo.name}}</view>
+            </view>
+          </view>
+        </view>
+        <!-- <view class='line'>
+          <image class="gift-img" src='{{tab2.url}}' animation="{{animationData2}}" bindtransitionend="getOpenAnimation"></image>
+          <image class='default-img' hidden='{{showDefault}}' src='{{tab2.url}}'></image>
+        </view>
+        <view class='line'>
+          <image class="gift-img" src='{{tab3.url}}' animation="{{animationData3}}" bindtransitionend="getOpenAnimation"></image>
+          <image class='default-img' hidden='{{showDefault}}' src='{{tab3.url}}'></image>
+        </view> -->
+      </view>
+  </view>
+</view>

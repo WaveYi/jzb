@@ -1,0 +1,21 @@
+<!--pages/huiyibang/checkList/index.wxml-->
+<view class="check_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{check_list}}" wx:key="index" data-index="{{index}}">
+    <image src="{{item.roomImg}}" mode="widthFix"></image>
+    <view class="house_box">
+      <view class="house_name">举办方企业名称：{{item.sponsorBusinessName}}</view>
+      <view class="name">主办方名字：{{item.sponsorName}}</view>
+      <view class="phone">手机号：{{item.phone}}</view>
+      <view class="date">开始时间：{{item.activityStartTime}}</view>
+      <view class="date">结束时间：{{item.activityEndTime}}</view>
+      <view class="status">会议状态：{{status.menuStatus(item.status)}}</view>
+    </view>
+    <view class="house_edit">
+      <button size="mini" type="primary" data-item="{{item}}" catchtap="changeHouse">修改</button>
+      <button size="mini" type="warn" data-id="{{item.idKey}}" catchtap="deleteHouse">删除</button>
+    </view>
+  </view>
+</view>
+
+<view class="no_house" bindtap="toCreate">添加登记人员</view>

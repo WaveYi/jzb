@@ -1,0 +1,14 @@
+<!--pages/memberList/index.wxml-->
+<view>
+  <view class="nav_tab_box">
+    <view class="nav_item {{activeIndex==index?'active':''}}" bindtap="clickNav" data-index="{{index}}" wx:for="{{tab_list}}" wx:key="index">{{item}}</view>
+  </view>
+  <view class="member_content">
+    <view class="member_item" wx:for="{{member_lists}}" wx:key="index">
+      <view><text>职位</text>{{item.type}}</view>
+      <view><text>昵称</text>{{item.nickname}}</view>
+      <view><text>手机号</text>{{item.phone}}</view>
+      <view><text>入职日期</text>{{item.createdDate}}</view>
+    </view>
+  </view>
+</view>

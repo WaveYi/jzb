@@ -1,0 +1,14 @@
+<!--pages/couponUseList/index.wxml-->
+<!-- <view class="nav_list">
+  <view bindtap="clickNav" data-index="{{index}}" class="{{nav_active==index?'on':''}}" wx:for="{{nav_list}}" wx:key="index">{{item}}</view>
+</view> -->
+<wxs src="../../filter/status.wxs" module="status"></wxs>
+<view class="nav_content" wx:if="{{couponList.length!=0}}">
+  <view class="seller_coupon_item" wx:for="{{couponList}}" wx:key="index">
+    <view class="seller_top"><text>扫码人昵称：{{item.compereNickname}}</text><!-- <text>身份：{{status.roleStatus(item.compereType)}}</text> --></view>
+    <view class="seller_bottom"><text>内容：{{item.content?item.content:''}}</text></view>
+    <view class="seller_bottom"><text>时间：{{item.createdTime?item.createdTime:''}}</text></view>
+  </view>
+</view>
+
+<view class="no_data_txt" wx:else>暂无数据</view>

@@ -1,0 +1,75 @@
+<!--pages/huiyibang/createMeeting/index.wxml-->
+<view class="form_box">
+  <form bindsubmit="submitForm">
+    <view class="title">{{title}}*</view>
+    <view class="form_item">
+      <text class="form_txt">举办方企业名称</text>
+      <view class="form_content"><input placeholder="请输入举办方企业名称" value="{{company_name}}" data-key="company_name" bindinput="getInputVal"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">举办方名称</text>
+      <view class="form_content"><input placeholder="请输入举办方名称" value="{{person_name}}" data-key="person_name" bindinput="getInputVal"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">会议名称</text>
+      <view class="form_content"><input placeholder="请输入会议名称" value="{{room_name}}" data-key="room_name" bindinput="getInputVal"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">联系方式</text>
+      <view class="form_content"><input placeholder="请输入联系方式" maxlength="11" type="number" value="{{person_phone}}" data-key="person_phone" bindinput="getInputVal"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">活动开始时间</text>
+      <view class="form_content noborder flexview">
+        <picker mode="date" value="{{date_start}}" start="{{date_start}}" bindchange="bindDateStartChange">
+          <view class="picker">
+            {{date_start}}
+          </view>
+        </picker>
+        <picker mode="time" value="{{time_start}}" bindchange="bindTimeStartChange">
+          <view class="picker">
+            {{time_start}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">活动结束时间</text>
+      <view class="form_content noborder flexview">
+        <picker mode="date" value="{{date_end}}" start="{{date_end}}" bindchange="bindDateEndChange">
+          <view class="picker">
+            {{date_end}}
+          </view>
+        </picker>
+        <picker mode="time" value="{{time_end}}" bindchange="bindTimeEndChange">
+          <view class="picker">
+            {{time_end}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">是否允许嘉宾邀请嘉宾？</text>
+      <view class="form_content noborder">
+        <radio-group bindchange="radioChange">
+          <label class="weui-cell" wx:for="{{items}}" wx:key="index">
+            <view class="weui-cell__hd">
+              <radio value="{{item.value}}" checked="{{item.checked}}"/>
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">会议背景图片</text>
+      <view class="form_content noborder">
+        <view class="add_box" bindtap="chooseLicense">
+          <text wx:if="{{is_roomImg == 0}}">+</text>
+          <image wx:else src="{{roomImg}}" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+    <button form-type="submit" type="primary">提交</button>
+  </form>
+</view>

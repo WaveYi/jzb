@@ -1,0 +1,23 @@
+/* pages/myBrowse/index.wxss */
+.video_list_item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f1f1f1;
+}
+.video_list_item image{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+}
+.video_list_info{
+  width: 400rpx;
+}
+.video_list_info view{
+  width: 100%;
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+  word-wrap: break-word;
+}

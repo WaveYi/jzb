@@ -1,0 +1,7 @@
+/* pages/shipment/index.wxss */
+ec-canvas{
+  display: block;
+  width: 100%;
+  height: 500px;
+  margin-top: 30rpx;
+}

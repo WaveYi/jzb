@@ -1,0 +1,12 @@
+<!--pages/couponUseList/index.wxml-->
+<!-- <view class="nav_list">
+  <view bindtap="clickNav" data-index="{{index}}" class="{{nav_active==index?'on':''}}" wx:for="{{nav_list}}" wx:key="index">{{item}}</view>
+</view> -->
+<view class="nav_content" wx:if="{{couponList.length!=0}}">
+  <view class="seller_coupon_item" wx:for="{{couponList}}" wx:key="index">
+    <view class="seller_top"><text>课程名称：{{item.couponName}}</text><text>{{item.date}}</text></view>
+    <!-- <view class="seller_bottom"><text>内容：{{item.content?item.content:''}}</text></view> -->
+  </view>
+</view>
+
+<view class="no_data_txt" wx:else>暂无数据</view>

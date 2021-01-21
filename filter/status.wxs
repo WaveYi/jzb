@@ -1,0 +1,125 @@
+ var status = {
+  filterStatus: function(status){
+    var status_txt = '';
+    if(status == '0'){
+      status_txt = '已邀请';
+    }else if(status == '1'){
+      status_txt = '已同意';
+    }else if(status == '2'){
+      status_txt = '已拒绝';
+    }
+    return status_txt;
+  },
+
+  menuStatus: function(status){
+    var status_txt = '';
+    if(status == '0' || status == null){
+      status_txt = '未开始';
+    }else if(status == '1'){
+      status_txt = '正在进行';
+    }else if(status == '2'){
+      status_txt = '已结束';
+    }else{
+      status_txt = '已删除'
+    }
+    return status_txt;
+  },
+  
+  homeRoleStatus: function(status){
+    var status_txt = '';
+    if(status == '1'){
+      status_txt = '申请中';
+    }else if(status == '2'){
+      status_txt = '正常';
+    }else{
+      status_txt = '已拒绝'
+    }
+    return status_txt;
+  },
+
+  roleStatus: function(status){
+    // 角色 0 学员 1 课程老板 10 院长 11 教师 12 企业 13 服务员
+    var status_txt = '';
+    if(status == '0' || status == null){
+      status_txt = '学员';
+    }else if(status == '1'){
+      status_txt = '课程老板';
+    }else if(status == '10'){
+      status_txt = '院长';
+    }else if(status == '11'){
+      status_txt = '教师';
+    }else if(status == '12'){
+      status_txt = '企业';
+    }else if(status == '13'){
+      status_txt = '服务员';
+    }
+    return status_txt;
+  },
+
+  logRoleStatus: function(status){
+    // 物流角色 0 物流封装站点 1 物流装车站点 2 物流中转站点 3 物流散货站点 
+    var status_txt = '';
+    if(status == '0' || status == null || status == ''){
+      status_txt = '物流封装站点';
+    }else if(status == '1'){
+      status_txt = '物流装车站点';
+    }else if(status == '2'){
+      status_txt = '物流中转站点';
+    }else if(status == '3'){
+      status_txt = '物流散货站点';
+    }
+    return status_txt;
+  },
+
+  positionStatus: function(status){
+    // 职位 0 农场老板 1 会议高管 2 会议经理
+    var status_txt = '';
+    if(status == 0){
+      status_txt = '企业老板';
+    }else if(status == 1){
+      status_txt = '企业高管';
+    }else{
+      status_txt = '企业经理'
+    }
+    return status_txt;
+  },
+
+  projectStatus: function(status){
+    // 节目类型 0:扫码观看视频 1：节目关注抽奖 2：投票 3：参与者抽奖
+    var status_txt = '';
+    if(status == 0){
+      status_txt = '扫码观看视频';
+    }else if(status == 1){
+      status_txt = '节目关注抽奖';
+    }else if(status == 2){
+      status_txt = '投票';
+    }else{
+      status_txt = '参与者抽奖';
+    }
+    return status_txt;
+  },
+  
+  inviteStatus: function(status){
+    // 促销券状态(0:待接受,1:已接受,2:已完成)
+    var status_txt = '';
+    if(status == 0 || status == null){
+      status_txt = '待接受';
+    }else if(status == 1){
+      status_txt = '已接受';
+    }else{
+      status_txt = '已完成'
+    }
+    return status_txt;
+  }
+ }
+
+ module.exports = {
+  filterStatus: status.filterStatus,
+  menuStatus: status.menuStatus,
+  homeRoleStatus: status.homeRoleStatus,
+  roleStatus: status.roleStatus,
+  logRoleStatus: status.logRoleStatus,
+  positionStatus: status.positionStatus,
+  projectStatus: status.projectStatus,
+  inviteStatus: status.inviteStatus
+ }

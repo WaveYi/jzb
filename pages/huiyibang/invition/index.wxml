@@ -1,0 +1,16 @@
+<!--pages/huiyibang/invition/index.wxml-->
+<view class="house_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{list}}" wx:key="index" data-index="{{index}}" bindtap="toMenuPage">
+    <view class="house_box">
+      <view class="name">课程名称：{{item.couponName?item.couponName:''}}</view>
+      <!-- <view class="name">促销券发出人：{{item.username?item.username:user_name}}</view> -->
+      <!-- <view class="name">邀请发出人角色：{{item.type==0?'代理人':item.type==1?'嘉宾代理':'老板'}}</view>status.roleStatus(item.genType) -->
+      <view class="nickname">学员昵称: {{item.nickname?item.nickname:''}}</view>
+      <!-- <view class="type">受邀人职位: {{status.positionStatus(item.userPosition)}}</view> -->
+      <view class="phone">学员手机号: {{item.phone?item.phone:''}}</view>
+      <view class="count">是否接受：{{item.accept==0?'等待接受':'接受'}}</view>
+      <!-- <view class="status">消费状态：{{item.status==0?'无效':item.status==1?'有效':'已使用'}}</view> -->
+    </view>
+  </view>
+</view>

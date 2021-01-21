@@ -1,0 +1,17 @@
+<!--pages/videoList/index.wxml-->
+<view class="video_list_box">
+  <view class="video_list_content" style="padding-bottom: 100rpx">
+    <view class="video_list_item" wx:for="{{list}}" wx:key="index">
+      <image src="{{item.img}}" mode="aspectFit"></image>
+      <view class="video_list_info">
+        <!-- <view>允许修改 <switch checked="{{item.status == '1'?true:false}}" data-idx="{{index}}" bindchange="switch1Change" style="transform: scale(0.7);" /></view> -->
+        <view wx:if="{{is_my==0}}">名称：{{type_name}}</view>
+        <view>序号：{{item.sort}}</view>
+        <!-- <view>{{item.link}}</view> -->
+        <view wx:if="{{item.status == '1'}}"><button type="primary" size="mini" data-sort="{{item.sort}}" data-status="{{item.status}}" data-vid="{{item.videoId}}" data-link="{{item.link}}" bindtap="changeVideo">修改视频</button></view>
+        <view><button type="primary" size="mini" data-sort="{{item.sort}}" data-link="{{item.video}}" bindtap="playVideo">播放视频</button></view>
+      </view>
+    </view>
+  </view>
+  <view class="add_bottom_btn" bindtap="toAddVideo" wx:if="{{is_my!=1}}">新增视频</view>
+</view>

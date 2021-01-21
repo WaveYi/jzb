@@ -1,0 +1,28 @@
+<!--pages/huiyibang/tableInfo/index.wxml-->
+<view class="house_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{list}}" wx:key="index" data-index="{{index}}" bindtap="toMenuPage">
+    <view class="house_box">
+      <view class="name">桌子名称：{{item.name}}</view>
+      <view class="name">桌子编号：{{item.number}}</view>
+      <view class="name">桌子容量：{{item.capacity}}</view>
+      <view class="name">职位：{{status.positionStatus(item.position)}}</view>
+      <!-- <view class="name">桌子状态：{{item.status}}</view> -->
+    </view>
+    <view class="house_edit">
+      <button size="mini" type="primary" data-id="{{item.idKey}}" catchtap="showPopup">查看桌子用户</button>
+    </view>
+  </view>
+
+  <van-popup show="{{ show }}" position="bottom" bind:close="onClose">
+    <view class="scroll_title">桌子用户信息</view>
+    <scroll-view scroll-y class="tabel_person">
+      <view class="scroll_item" wx:for="{{table_users}}" wx:key="index">
+        <view>企业名称：{{item.enterpriseName?item.enterpriseName:''}}</view>
+        <view>用户名称：{{item.nickname}}</view>
+        <view>用户真名：{{item.realName?item.realName:''}}</view>
+        <view>用户手机号：{{item.phone}}</view>
+      </view>
+    </scroll-view>
+  </van-popup>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/applyCompany/index.wxml-->
+<view>
+  <view class="form_item">
+    <text class="form_txt">申请类型</text>
+    <view class="form_content noborder">
+      <picker bindchange="bindPickerChange" value="{{index}}" range-key="type" range="{{array}}">
+        <view class="picker_txt">
+          {{array[index].type}}
+          <image src="/assets/right.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="form_btn">
+    <button bindtap="submit" type="primary">提交</button>
+  </view>
+</view>

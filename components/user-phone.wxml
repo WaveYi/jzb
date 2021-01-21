@@ -1,0 +1,4 @@
+<!--components/user-phone.wxml-->
+<button class="d-class" open-type="getPhoneNumber" bind:getphonenumber="getPhoneNumber" lang='zh_CN'>
+  <slot></slot>
+</button>

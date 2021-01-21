@@ -1,0 +1,19 @@
+<!--pages/huiyibang/signList/index.wxml-->
+<view class="house_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{list}}" wx:key="index" data-index="{{index}}" bindtap="toMenuPage">
+    <view class="house_box">
+      <view class="name">会议名称：{{item.meetingName?item.meetingName:''}}</view>
+      <view class="name">嘉宾昵称：{{item.nickname?item.nickname:''}}</view>
+      <view class="name">企业名称：{{item.enterpriseName?item.enterpriseName:''}}</view>
+      <view class="name">促销券名称：{{item.couponName?item.couponName:''}}</view>
+      <!-- <view class="name">用户真名：{{item.realName}}</view> -->
+      <!-- <view class="name">代理人名称：{{item.sellerName}}</view> -->
+      <view class="name">类型：{{item.remark?item.remark:''}}</view>
+      <view class="name">时间：{{item.consumeTime?item.consumeTime:''}}</view>
+      <!-- <view class="time">打卡时间：{{item.singInDate}}</view>
+      <view class="time">最早打卡时间：{{item.earlySingInDate}}</view>
+      <view class="time">最晚打卡时间：{{item.nightSingInDate}}</view> -->
+    </view>
+  </view>
+</view>

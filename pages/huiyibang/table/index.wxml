@@ -1,0 +1,20 @@
+<!--pages/huiyibang/table/index.wxml-->
+<view class="house_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{table_list}}" wx:key="index" data-index="{{index}}" bindtap="toMenuPage">
+    <view class="house_box">
+      <view class="name">桌子名字：{{item.name}}</view>
+      <view class="number">桌子编号：{{item.number}}</view>
+      <view class="capacity">桌子容量：{{item.capacity}}</view>
+      <view class="position">职位：{{status.positionStatus(item.position)}}</view>
+      <!-- <view class="status">状态：{{item.status==1?'正常':'删除'}}</view> -->
+    </view>
+    <view class="house_edit">
+      <button size="mini" type="primary" data-item="{{item}}" catchtap="changeTable">修改</button>
+      <button size="mini" type="warn" data-id="{{item.idKey}}" catchtap="deleteTable">删除</button>
+    </view>
+  </view>
+</view>
+
+
+<view class="no_house" bindtap="toCreate">创建桌子</view>

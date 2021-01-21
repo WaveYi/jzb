@@ -1,0 +1,107 @@
+<!--pages/huiyibang/addMenu/index.wxml-->
+<view class="form_box">
+  <form bindsubmit="submitForm">
+    <view class="title">{{title}}*</view>
+    <view class="form_item">
+      <text class="form_txt">节目标题</text>
+      <view class="form_content"><input placeholder="请输入节目标题" value="{{menu_name}}" data-key="menu_name" bindinput="getInputVal"></input></view>
+    </view>
+    <!-- <view class="form_item">
+      <text class="form_txt">节目描述</text>
+      <view class="form_content"><input placeholder="请输入节目描述" value="{{describe}}" data-key="describe" bindinput="getInputVal"></input></view>
+    </view> -->
+    <view class="form_item" wx:if="{{menu_type==2 && is_edit==0}}">
+      <text class="form_txt">被选举人姓名</text>
+      <view class="form_content"><input type="text" placeholder="请输入被选举人姓名" maxlength="10" value="{{phone}}" data-key="phone" bindinput="getInputVal"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">活动开始时间</text>
+      <view class="form_content noborder flexview">
+        <picker mode="date" value="{{date_start}}" bindchange="bindDateStartChange">
+          <view class="picker">
+            {{date_start}}
+          </view>
+        </picker>
+        <picker mode="time" value="{{time_start}}" bindchange="bindTimeStartChange">
+          <view class="picker">
+            {{time_start}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">活动结束时间</text>
+      <view class="form_content noborder flexview">
+        <picker mode="date" value="{{date_end}}" bindchange="bindDateEndChange">
+          <view class="picker">
+            {{date_end}}
+          </view>
+        </picker>
+        <picker mode="time" value="{{time_end}}" bindchange="bindTimeEndChange">
+          <view class="picker">
+            {{time_end}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">请选择节目类型</text>
+      <view class="form_content noborder">
+        <radio-group bindchange="radioChange">
+          <view style="display: flex;flex-wrap: wrap;">
+            <label class="weui-cell" wx:for="{{items}}" wx:key="index">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+          </view>
+        </radio-group>
+      </view>
+    </view>
+    <!-- <view class="form_item" wx:if="{{menu_type==1}}">
+      <view class="form_txt">请上传代金券 </view>
+      <view class="form_content">
+        <button class="djq_btn" type="primary" bindtap="scanGetCoupon">点击上传</button>
+      </view>
+    </view> -->
+    <view class="form_item" wx:if="{{menu_type==1}}">
+      <text class="form_txt">请上传代金券</text>
+      <view class="form_content noborder">
+        <view class="add_box" bindtap="scanGetCoupon">
+          <text wx:if="{{is_djqimg == 0}}">+</text>
+          <image wx:else src="{{djqimg}}" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="form_item" wx:if="{{menu_type==1}}">
+      <text class="form_txt">选择代金券</text>
+      <view class="form_content">
+        <picker mode="selector" range="{{coupon_list}}" range-key="coupon_name" bindchange="bindCouponPickerChange">
+          <view class="picker">
+            {{coupon_index?coupon_list[coupon_index].coupon_name:'请选择代金券'}}
+          </view>
+        </picker>
+      </view>
+    </view> -->
+    <view class="form_item">
+      <view class="form_txt"><text>视频地址</text><text class="add" bindtap="addVideo">添加</text></view>
+      <view wx:for="{{videoLinks}}" wx:key="index">
+        <view class="video_sort">视频{{index+1}}</view>
+        <view class="form_content">
+          <textarea name="" placeholder="请输入视频地址" value="{{item.videoLink}}" data-index="{{index}}" bindinput="addVideoLink" maxlength="-1" cols="30" rows="10"></textarea>
+        </view>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">节目背景图片</text>
+      <view class="form_content noborder">
+        <view class="add_box" bindtap="chooseLicense">
+          <text wx:if="{{is_img == 0}}">+</text>
+          <image wx:else src="{{img}}" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+    <button form-type="submit" type="primary">{{is_edit==0?'提交':'修改'}}</button>
+  </form>
+</view>

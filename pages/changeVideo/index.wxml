@@ -1,0 +1,34 @@
+<van-image width="100%" fit="cover" height="421rpx" src="{{imageUrl}}" />
+<view class="introduction">
+  <text>产品名称：{{name?name:''}}</text>
+  <text>二维码ID：{{codeId}}</text>
+</view>
+
+<view class="videoList">
+
+  <view class="videoItem" wx:for="{{form}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <view class="title clear">
+      <van-icon class="fl" size="38rpx" name="live" />
+      <text class="fl"> 视频{{index+1}}</text>
+    </view>
+
+    <view class="link">
+      <text class="name">原视频链接：</text>
+      <view class="oldlink">{{item.weseeLink?item.weseeLink:"暂无"}}</view>
+    </view>
+
+    <view class="link" wx:if="{{item.updateStatus==1}}">
+      <text class="name">新的视频链接：</text>
+      <van-field value="{{ value }}" clearable data-index="{{index}}" bind:change="onChange" autosize type="textarea" placeholder="请输入新的视频链接" border="{{ false }}" />
+    </view>
+    <view class="btns" wx:if="{{item.weseeLink}}">
+      <van-button custom-class="btn" bind:click="play" data-row="{{item}}" color="#37444A">点击播放</van-button>
+    </view>
+  </view>
+
+</view>
+
+<!-- 保存 -->
+<view class="save">
+  <van-button custom-class="saveBtn" bind:click="save" color="#37444A">保存</van-button>
+</view>

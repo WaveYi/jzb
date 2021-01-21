@@ -1,0 +1,12 @@
+/* pages/huiyibang/memberArrange/index.wxss */
+.content{
+  width: 100%;
+}
+
+.content_item{
+  height: 100rpx;
+  width: 100%;
+  padding: 15rpx;
+  border: 1px solid #cdcdcd;
+  line-height: 100rpx;
+}

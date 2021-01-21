@@ -1,0 +1,14 @@
+<!--pages/myVideoList/index.wxml-->
+<view class="video_list_box">
+  <view class="video_list_content">
+    <view class="video_list_item" wx:for="{{list}}" wx:key="index">
+      <image src="{{item.img}}" mode="aspectFit"></image>
+      <view class="video_list_info">
+        <view>名称：{{item.typeName}}</view>
+        <view>编号：{{item.codeId}}</view>
+        <!-- <view>链接：{{item.link}}</view> -->
+      </view>
+      <button type="primary" size="mini" data-id="{{item.codeId}}" bindtap="changeVideo">查看</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+/* pages/qinqinhehe/companyApprove/index.wxss */
+.company_item{
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  color: #333333;
+  font-size: 24rpx;
+}
+.company_left{
+  width: 70%;
+}
+.company_right{
+  width: 30%;
+  text-align: right;
+}

@@ -1,0 +1,85 @@
+<!--pages/profitDetail/index.wxml-->
+<view class="profit_detail">
+  <view class="profit_date" wx:if="{{type!='boss'}}">
+    <picker mode="date" value="{{today}}" bindchange="bindDateChange">
+      <view class="picker">
+        选择日期： {{today}}
+      </view>
+    </picker>
+  </view>
+  <view class="nav_tab_box" wx:if="{{type=='boss' || type=='boss_seller'}}">
+    <view class="nav_item {{activeIndex==index?'active':''}}" bindtap="clickNav" data-index="{{index}}" wx:for="{{tab_list}}" wx:key="index">{{item}}</view>
+  </view>
+
+  <view class="chart_btn" wx:if="{{type=='boss'}}" bindtap="selectDayOrMonth"><text class="{{selectDayMonth?'active':''}}">天</text> / <text class="{{!selectDayMonth?'active':''}}">月</text></view>
+  <ec-canvas id="mychart" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+
+  <block wx:if="{{type=='boss' || type=='agent'}}">
+    <!-- 代理人收益 -->
+    <view class="table_box" wx:if="{{activeIndex == 0}}">
+      <view class="table_item">
+        <view class="table_th">促销券</view>
+        <view class="table_th">被出售张数</view>
+        <view class="table_th">代理人收益</view>
+        <view class="table_th">总收益</view>
+      </view>
+      <view class="table_item" wx:for="{{list}}" wx:key="index">
+        <view class="table_td">{{item.couponName}}</view>
+        <view class="table_td">{{item.sellCount?item.sellCount:0}}</view>
+        <view class="table_td">{{item.profit?item.profit:0}}</view>
+        <view class="table_td">{{item.total?item.total:0}}</view>
+      </view>
+    </view>
+    <!-- 代理人折让 -->
+    <view class="table_box" wx:else>
+      <view class="table_item">
+        <view class="table_th">促销券</view>
+        <view class="table_th">被出售张数</view>
+        <view class="table_th">代理人收益</view>
+        <view class="table_th">总收益</view>
+      </view>
+      <view class="table_item" wx:for="{{list}}" wx:key="index">
+        <view class="table_td">{{item.couponName}}</view>
+        <view class="table_td">{{item.consumeCount?item.consumeCount:0}}</view>
+        <view class="table_td">{{item.value?item.value:0}}</view>
+        <view class="table_td">{{item.total?item.total:0}}</view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view wx:if="{{activeIndex == 0}}">
+      <!-- 销售员收益 -->
+      <view class="table_box">
+        <view class="table_item">
+          <view class="table_th">促销券</view>
+          <view class="table_th">出售张数</view>
+          <view class="table_th">每张售价</view>
+          <view class="table_th">总计收入</view>
+        </view>
+        <view class="table_item" wx:for="{{list}}" wx:key="index">
+          <view class="table_td">{{item.couponName}}</view>
+          <view class="table_td">{{item.sellCount?item.sellCount:0}}</view>
+          <view class="table_td">{{item.price?item.price:0}}</view>
+          <view class="table_td">{{item.total?item.total:0}}</view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <!-- 销售员折让 -->
+      <view class="table_box">
+        <view class="table_item">
+          <view class="table_th">促销券</view>
+          <view class="table_th">验收次数</view>
+          <view class="table_th">每张折让</view>
+          <view class="table_th">总计折让</view>
+        </view>
+        <view class="table_item" wx:for="{{list}}" wx:key="index">
+          <view class="table_td">{{item.couponName}}</view>
+          <view class="table_td">{{item.consumeCount?item.consumeCount:0}}</view>
+          <view class="table_td">{{item.value?item.value:0}}</view>
+          <view class="table_td">{{item.total?item.total:0}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

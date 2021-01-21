@@ -1,0 +1,8 @@
+<!--pages/huiyibang/checkConferenceRoom/index.wxml-->
+<view>
+  <van-cell-group>
+    <block wx:for="{{functionList}}" wx:key="index">
+      <van-cell is-link title="{{item.name}}" data-url="{{item.url}}" bindtap="pageTo" />
+    </block>
+  </van-cell-group>
+</view>

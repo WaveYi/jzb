@@ -1,0 +1,30 @@
+<!--pages/huiyibang/addCheck/index.wxml-->
+<view class="form_box">
+  <form bindsubmit="submitForm">
+    <!-- <view class="title">{{title}}*</view> -->
+    <view class="form_item" wx:if="{{is_form==1}}">
+      <view class="form_txt">公司名称 <text>*</text></view>
+      <view class="form_content">
+        <picker mode="selector" range="{{farms}}" range-key="name" bindchange="bindPickerChange">
+          <view class="picker">
+            {{farm_index?farms[farm_index].name:'请选择公司'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">角色类型</text>
+      <view class="form_content noborder">
+        <radio-group bindchange="radioChange">
+          <label class="weui-cell" wx:for="{{items}}" wx:key="index">
+            <view class="weui-cell__hd">
+              <radio value="{{item.value}}" checked="{{item.checked}}"/>
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <button form-type="submit" type="primary" style="margin-top: 80rpx;">{{is_edit==0?'提交':'修改'}}</button>
+  </form>
+</view>

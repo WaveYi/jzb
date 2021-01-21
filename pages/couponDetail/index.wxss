@@ -1,0 +1,14 @@
+/* pages/couponDetail/index.wxss */
+.coupon_img{
+  display: block;
+  width: 100%;
+}
+.user_code{
+  position: fixed;
+  width: 400rpx;
+  height: 400rpx;
+  left: 50%;
+  top: 100rpx;
+  transform: translateX(-50%);
+  z-index: 10;
+}

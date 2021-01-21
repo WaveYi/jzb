@@ -1,0 +1,13 @@
+<!--pages/huiyibang/voteDetail/index.wxml-->
+<view class="house_list_box">
+  <view class="house_item" wx:for="{{vote_list}}" wx:key="index" data-index="{{index}}" bindtap="toMenuPage">
+    <view class="house_box">
+      <!-- <view class="name">节目名称：{{item.title}}</view> -->
+      <view class="name">投票人名称：{{item.nickname?item.nickname:''}}</view>
+      <view class="name">企业名称：{{item.enterpriseName?item.enterpriseName:''}}</view>
+      <view class="name">手机号：{{item.phone?item.phone:''}}</view>
+      <view class="name">选择：{{item.choice==0?'支持':'不支持'}}</view>
+      <!-- <view class="name">类型：{{item.type==0?'正常':'失效'}}</view> -->
+    </view>
+  </view>
+</view>

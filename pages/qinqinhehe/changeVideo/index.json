@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "更换视频",
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index"
+  }
+}

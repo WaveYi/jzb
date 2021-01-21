@@ -1,0 +1,29 @@
+<!--pages/myStaff/index.wxml-->
+<view>
+  <wxs module="status" src="../../../filter/status.wxs"></wxs>
+  <view class="nav_tab_box">
+    <view class="nav_item {{activeIndex==index?'active':''}}" bindtap="clickNav" data-index="{{index}}" wx:for="{{tab_list}}" wx:key="index">{{item}}</view>
+  </view>
+  <scroll-view scroll-y bindscrolltolower="loadMore" class="nav_content_box">
+    <view class="content_item" wx:for="{{staffList}}" wx:key="index">
+      <view class="head_left">
+        <image src="{{item.headUrl}}" mode="widthFix"></image>
+        <view class="head_left_info">
+          <view class="head_left_name">{{item.nickname}} </view>
+          <view class="head_left_iden">{{status.indentityStatus(item.type)}}</view>
+        </view>
+      </view>
+      <view class="info_right">
+        <view class="info_time">{{item.date}}</view>
+        <view class="info_btn" wx:if="{{activeIndex == 0}}">
+          <text wx:if="{{item.status!=0 && activeIndex == 0}}">{{status.filterStatus1(item.status)}}</text>
+          <button size="mini" wx:if="{{item.status==0}}" type="primary" data-index="{{index}}" data-id="{{item.memberId}}" bindtap="clickAgree">同意</button>
+          <button size="mini" wx:if="{{item.status==0}}" type="default" data-index="{{index}}" data-id="{{item.memberId}}" bindtap="clickReject">拒绝</button>
+        </view>
+        <view class="info_btn" wx:if="{{activeIndex == 1}}">
+          <button size="mini" type="warn" data-index="{{index}}" data-id="{{item.memberId}}" bindtap="clickDelete">删除</button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

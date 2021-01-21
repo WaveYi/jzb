@@ -1,0 +1,2 @@
+<video loop src="{{url}}" autoplay custom-cache="{{true}}" enable-play-gesture vslide-gesture>
+</video>

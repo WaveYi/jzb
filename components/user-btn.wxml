@@ -1,0 +1,4 @@
+<!--components/user-btn.wxml-->
+<button class="d-class" open-type="getUserInfo" bind:getuserinfo="userInfoFun" lang='zh_CN'>
+  <slot></slot>
+</button>

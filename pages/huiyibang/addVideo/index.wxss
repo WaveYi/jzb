@@ -1,0 +1,29 @@
+/* pages/huiyibang/addVideo/index.wxss */
+.form_box{
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.form_box .form_item{
+  margin-bottom: 20rpx;
+}
+.form_box .form_item .form_txt{
+  color: #999;
+  font-size: 24rpx;
+}
+.form_box .form_item .form_content{
+  margin-top: 10rpx;
+  border: 1px solid #ccc;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+}
+.form_box .form_item .form_content.noborder{
+  border: 0;
+}
+.form_box .form_item .form_content input{
+  font-size: 26rpx;
+}
+.form_box .form_item .form_content textarea{
+  height: 150rpx;
+}

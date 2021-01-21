@@ -1,0 +1,71 @@
+<!--pages/promotion/index.wxml-->
+<view>
+  <wxs src="../../filter/status.wxs" module="status"></wxs>
+  <view class="promotion_box">
+    <image class="back_img" src="{{back_img}}" mode="aspectFill"></image>
+    <!-- <van-button wx:if="{{name!=''}}" catch:click="updateToken" class="clear_btn" color="#37444A" type="primary" size="small">更新数据</van-button> -->
+    <!-- <van-button wx:if="{{has_user==1}}" catch:click="changeIdentity" class="change_btn" color="#37444A" type="primary" size="small">切换身份</van-button> -->
+    <view class="person_box">
+      <view class="person_info_box">
+        <!-- <user-btn bind:mylogin="getUserLogin"> -->
+          <view class="person_avatar"><image src="{{userInfo.headPortraitLink}}" mode="widthFix"></image></view>
+          <view class="person_name">{{status.roleStatus(identity)}} {{userInfo.nickname}}</view>
+        <!-- </user-btn> -->
+        <!-- <user-phone bind:myphone="getUserPhone" wx:if="{{phone == null || phone == '' && (identity == 'consumer' || identity == '' || identity == null)}}">
+          <van-button wx:if="{{name!=''}}" class="phone_btn" color="#37444A" type="primary" size="small">获取手机号</van-button>
+        </user-phone> -->
+        <!-- <van-button wx:if="{{identity != 'consumer' && identity != '' && identity != null}}" bind:click="toMyHouse" color="#37444A" class="left_btn" type="primary" size="small">
+          {{!is_click?'我的商家':'我的主页'}}
+        </van-button> -->
+        <!-- <van-button wx:if="{{identity != 'seller'}}" bind:click="scanCode" color="#37444A" icon="scan" class="scanCode" type="primary" size="small">
+          扫码看视频
+        </van-button> -->
+
+        <!-- <picker class="business_picker" wx:if="{{is_click == true && identity == 'agent' && myBusinessList.length != 0}}" bindchange="bindPickerChange" range-key="businessName" value="{{bus_index}}" range="{{myBusinessList}}">
+          <view class="my_business_box">选择商家：{{select_business}}</view>
+        </picker> -->
+        <!-- <button wx:if="{{identity == 1 && is_issue == 1}}" type="primary" bindtap="toIssue" class="issue_btn" size="mini">从编辑发行</button> -->
+      </view>
+      
+      <view wx:if="{{is_home}}">
+        <promotion-list list="{{promotion_list}}" is_click="{{is_click}}" has_user="{{has_user}}" phone="{{phone}}" identity="{{identity}}" bind:myevent="getListClick" bind:myshow="getOnShow"></promotion-list>
+      </view>
+      <view wx:else>
+        <!-- 促销券编辑 -->
+        <block wx:if="{{is_list == 0}}">
+          <view class="browse_box">
+            <van-button bindtap="selectUserCoupon" color="#37444A" type="primary" size="small" class="customize_add" wx:if="{{identity == 1}}">自定义促销券</van-button>
+            <!-- <van-button bindtap="lookTemplate" color="#37444A" type="primary" size="small" class="template_btn" wx:if="{{identity == 1}}">{{custom_isNull?'我的促销券':'参考模板'}}</van-button> -->
+            <!-- 模板促销券列表 -->
+            <scroll-view wx:if="{{custom_isNull == true}}" bindscrolltolower="getCouponMore" lower-threshold="100" class="scroll_view_H" scroll-x="true">
+              <view class="scroll_item" bindtap="selectCoupon" data-index="{{index}}" wx:for="{{coupon_list}}" wx:key="index">
+                <view class="txt">{{item.coupon_name}}</view>
+                <image src="{{item.imageNum}}" mode="widthFix"></image>
+              </view>
+            </scroll-view>
+            <!-- 自定义促销券列表 -->
+            <scroll-view wx:else bindscrolltolower="getCouponCustomMore" lower-threshold="100" class="scroll_view_H" scroll-x="true">
+              <view class="scroll_item" bindtap="selectCoupon" data-index="{{index}}" wx:for="{{coupon_custom_list}}" wx:key="index">
+                <view class="txt">{{item.couponName}}</view>
+                <image src="{{item.src}}" mode="widthFix"></image>
+              </view>
+            </scroll-view>
+          </view>
+        </block>
+        <!-- 促销券发行 -->
+        <block wx:else>
+          <view class="browse_box">
+            <scroll-view bindscrolltolower="getIssuedMore" lower-threshold="100" class="scroll_view_H" scroll-x="true">
+              <view class="scroll_item" bindtap="selectCoupon" data-index="{{index}}" wx:for="{{issued_list}}" wx:key="index">
+                <view class="txt">{{item.coupon_name}}</view>
+                <image src="{{item.imageNum}}" mode="widthFix"></image>
+              </view>
+            </scroll-view>
+          </view>
+        </block>
+      </view>
+      
+      <view class="mine" catchtap="toUser"><image src="../../assets/mine.png" mode="widthFix"></image></view>
+    </view>
+  </view>
+</view>

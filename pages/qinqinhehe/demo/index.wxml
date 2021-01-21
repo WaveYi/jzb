@@ -1,0 +1,6 @@
+<van-nav-bar title="亲亲和和" left-arrow="{{true}}" left-text="获取权益" custom-class="navBar" fixed border="{{false}}" title-class="title" bind:click-left="onClickLeft">
+  <van-icon color="#fff" size="32rpx" name="arrow-left" slot="left" />
+</van-nav-bar>
+<video src="{{url}}" autoplay custom-cache="{{true}}" bindended="nextVideo" binderror="nextVideo" vslide-gesture>
+</video>
+<button open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>

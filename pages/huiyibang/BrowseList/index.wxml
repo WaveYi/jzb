@@ -1,0 +1,21 @@
+<!--pages/huiyibang/Browse/index.wxml-->
+<view class="house_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{result_list}}" wx:key="index" data-index="{{index}}" bindtap="toMenuPage">
+    <view class="house_box">
+      <view class="house_name">课程名称：{{item.couponName?item.couponName:''}}</view>
+      <!-- <view class="name">昵称：{{item.nickname}}</view> -->
+      <view class="name">学员昵称：{{item.realName?item.realName:user_name}}</view>
+      <view class="name">学员手机号：{{item.phone?item.phone:''}}</view>
+      <!-- <view class="type">角色：{{item.userType==0?'代理人':item.userType==1?'嘉宾代理':'老板'}}</view> -->
+      <view class="count">代理邀请总数量：{{item.inviteNum?item.inviteNum:0}}</view>
+      <view class="count">代理邀请已接受数量：{{item.inviteSuccessNum?item.inviteSuccessNum:0}}</view>
+      <view class="count">代理邀请还未接受数量：{{item.inviteAwaitNum?item.inviteAwaitNum:0}}</view>
+      <view class="count">代理邀请被拒绝数量：{{item.inviteFailNum?item.inviteFailNum:0}}</view>
+      <!-- <view class="status">代理状态：{{item.status==0?'无效':'有效'}}</view> -->
+    </view>
+    <view class="house_edit">
+      <button size="mini" type="primary" data-item="{{item}}" catchtap="lookDetail">查看详情</button>
+    </view>
+  </view>
+</view>

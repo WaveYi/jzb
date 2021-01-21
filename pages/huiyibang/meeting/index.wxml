@@ -1,0 +1,76 @@
+<!--pages/huiyibang/meeting/index.wxml-->
+<wxs src="../../../filter/status.wxs" module="status"></wxs>
+<view wx:if="{{room_id}}">
+  <van-button wx:if="{{identity==0}}" catch:click="deleteMeeting" class="clear_btn" color="#333333" type="primary" size="small">退出公司</van-button>
+  <image class="back_img" src="{{back_img}}" mode="aspectFill"></image>
+  <view class="meeting_box">
+    <view class="meetimg_item" wx:for="{{meetings}}" wx:key="index" bindtap="clickMeetingItem" data-index="{{index}}">
+      <view class="icon"><image src="{{item.icon}}"></image></view>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+
+  <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="no_house" wx:if="{{room_identity!=7}}">切换角色 <text>（当前角色：{{status.roleStatus(room_identity)}}）</text></view>
+    <view class="no_house" wx:else>切换角色 <text>（当前角色：{{status.logRoleStatus(log_identity)}}）</text></view>
+  </picker>
+
+  <van-popup show="{{ show }}" bind:close="onClose">
+    <image src="{{company_code}}" mode="widthFix"></image>
+  </van-popup>
+
+  <van-popup show="{{ table_show }}" bind:close="onClose">
+    <view class="write_table">
+      <input type="text" placeholder="请输入要绑定的桌号" value="{{table_num}}" bindinput="getTableNum" />
+      <button type="primary" bindtap="confirmTableNum">确定</button>
+    </view>
+  </van-popup>
+
+  <van-popup show="{{ show1 }}" bind:close="onClose1" position="bottom">
+    <view class="project_header">
+      <text class="p_cancel" bindtap="onClose1">取消</text>
+      <view class="p_txt">选择项目</view>
+      <text class="p_confirm" bindtap="selectConfirm">确定</text>
+    </view>
+    <scroll-view scroll-y bindscrolltolower="loadMore" class="project_popup_box">
+      <radio-group bindchange="selectProject">
+        <view class="project_item" wx:for="{{project_list}}" wx:key="index">
+          <radio value="{{index}}" checked="{{is_checked}}" /> {{item.typeName}}
+        </view>
+      </radio-group>
+    </scroll-view>
+  </van-popup>
+
+  <van-popup show="{{ show2 }}" bind:close="onClose2" position="bottom">
+    <view class="project_header">
+      <text class="p_cancel" bindtap="onClose2">取消</text>
+      <view class="p_txt">编辑视频</view>
+      <text class="p_confirm" bindtap="editVideo">确定</text>
+    </view>
+    <scroll-view scroll-y class="project_popup_box">
+      <view class="form_box">
+        <view class="form_item">
+          <view class="form_txt"><text>视频地址</text><text class="add" bindtap="addVideo">添加视频</text></view>
+          <view wx:for="{{videoLinks}}" wx:key="index">
+            <view class="video_sort">视频{{index+1}}</view>
+            <view class="form_content">
+              <textarea name="" placeholder="请输入视频地址" value="{{item.videoLink}}" data-index="{{index}}" bindinput="addVideoLink" maxlength="-1" cols="30" rows="10"></textarea>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </van-popup>
+  <van-popup show="{{ scan_show }}" bind:close="onClose">
+    <view class="personInfo_box">
+      <view class="personTitle">
+        <input type="text" value="{{scan_content}}" bindinput="writeContent" placeholder="请输入描述内容"></input>
+      </view>
+      <view class="personView">
+        <button type="primary" size="mini" bindtap="submitContent">确定</button>
+      </view>
+    </view>
+  </van-popup>
+</view>
+
+<view class="no_house_txt" wx:else>暂无公司</view>

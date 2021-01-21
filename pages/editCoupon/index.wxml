@@ -1,0 +1,83 @@
+<!--pages/editCoupon/index.wxml-->
+<view class="form_box">
+  <form bindsubmit="submitForm">
+    <view class="title">编辑区</view>
+    <view class="form_item">
+      <view class="form_txt">课程类型</view>
+      <view class="form_content">
+        <picker mode="selector" range="{{couponTypes}}" range-key="name" bindchange="bindPickerChange">
+          <view class="picker">
+            {{coupon_index?couponTypes[coupon_index].name:'请选择课程类型'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form_item">
+      <view class="form_txt">促销券类型</view>
+      <view class="form_content noborder">
+        <radio-group bindchange="radioChange">
+          <label class="weui-cell" wx:for="{{items}}" wx:key="index">
+            <view class="weui-cell__hd">
+              <radio value="{{item.value}}" checked="{{item.checked}}"/>
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">{{from_type==0?'促销券':'代金券'}}名称</text>
+      <view class="form_content"><input placeholder="{{from_type==0?'请输入促销券名称':'请输入代金券名称'}}" value="{{coupon_name}}" bindinput="getCouponName"></input></view>
+    </view>
+    <!-- <view class="form_item">
+      <text class="form_txt">促销券售价</text>
+      <view class="form_content"><input placeholder="请输入促销券价格" type="number" value="{{price}}" bindinput="getPrice"></input></view>
+    </view> -->
+    <!-- <view class="form_item">
+      <text class="form_txt">促销券面额</text>
+      <view class="form_content"><input placeholder="请输入促销券面额" type="number" value="{{face}}" bindinput="getFace"></input></view>
+    </view> -->
+    <view class="form_item">
+      <text class="form_txt">{{from_type==0?'促销券':'代金券'}}有效时间</text>
+      <view class="form_content">
+        <picker mode="date" start="{{today_date}}" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            {{date_txt}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">{{from_type==0?'促销券':'代金券'}}有效次数</text>
+      <view class="form_content"><input placeholder="{{from_type==0?'请输入促销券有效次数':'请输入代金券有效次数'}}" type="number" value="{{count}}" bindinput="getCount"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">代理人收益（每张）</text>
+      <view class="form_content"><input placeholder="请输入代理人收益" type="number" value="{{profit}}" bindinput="getProfit"></input></view>
+    </view>
+    <!-- <view class="form_item">
+      <text class="form_txt">{{from_type==0?'促销券':'代金券'}}使用频率（小时）</text>
+      <view class="form_content"><input placeholder="{{from_type==0?'请输入促销券使用频率':'请输入代金券使用频率'}}" type="number" value="{{frequence}}" bindinput="getFrequence"></input></view>
+    </view> -->
+    <!-- <view class="form_item">
+      <text class="form_txt">促销券购买频率（天）</text>
+      <view class="form_content"><input placeholder="请输入促销券购买频率" type="number" value="{{buyFrequence}}" bindinput="getBuyFrequence"></input></view>
+    </view> -->
+    <view class="title">视频区</view>
+    <view class="video_list_box" wx:for="{{video_list}}" wx:key="index">
+      <view class="video_num">视频{{item.sort}}</view>
+      <!-- <view class="video_item">
+        <text class="video_txt">视频名称</text>
+        <view><input placeholder="请输入视频名称" disabled bindinput="getVideoName" data-index="{{index}}" value="{{item.videoName}}"></input></view>
+      </view> -->
+      <view class="video_item last">
+        <text class="video_txt">视频链接</text>
+        <view><textarea placeholder="请输入视频链接" show-confirm-bar="{{false}}" maxlength="-1" bindinput="getVideoUrl" data-index="{{index}}" value="{{item.weseeLink}}"></textarea></view>
+      </view>
+    </view>
+    <view class="btn_box">
+      <!-- <button size="mini" bindtap="save" class="left" type="primary">保存</button> -->
+      <button size="mini" form-type="submit" type="primary">发行</button>
+    </view>
+  </form>
+</view>

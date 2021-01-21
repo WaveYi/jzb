@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "promotion-list": "/components/promotionList",
+    "user-btn": "/components/user-btn",
+    "user-phone": "/components/user-phone"
+  },
+  "navigationBarTitleText": "促销券管理"
+}

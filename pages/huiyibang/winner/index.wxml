@@ -1,0 +1,20 @@
+<!--pages/huiyibang/winner/index.wxml-->
+<view class="check_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{winner_list}}" wx:key="index" data-index="{{index}}">
+    <view class="house_box">
+      <view class="name">企业名称：{{item.businessName}}</view>
+      <view class="name">中奖人名字：{{item.name}}</view>
+      <view class="phone">手机号码：{{item.phone}}</view>
+      <view class="address">地址：{{item.address}}</view>
+      <!-- <view class="status">状态：{{item.status=='0'?'失效':'有效'}}</view> -->
+      <!-- <view class="date">创建时间：{{item.createdTime}}</view> -->
+    </view>
+    <!-- <view class="house_edit">
+      <button size="mini" type="primary" data-item="{{item}}" catchtap="changeWinner">修改</button>
+      <button size="mini" type="warn" data-id="{{item.idKey}}" catchtap="deleteWinner">删除</button>
+    </view> -->
+  </view>
+</view>
+
+<!-- <view class="no_house" bindtap="toCreate">添加中奖人</view> -->

@@ -1,0 +1,30 @@
+.title {
+  font-size: 36rpx !important;
+  color: #fff !important;
+}
+
+.navBar {
+  background: #212121 !important;
+}
+.navBar .van-nav-bar__left{
+  display: flex !important;
+  align-items: center !important;
+}
+.navBar .van-icon-arrow-left{
+  color: #ffffff !important;
+  font-size: 24px !important;
+}
+.navBar .van-nav-bar__text{
+  color: #ffffff !important;
+  background: none !important;
+}
+
+video {
+  margin-top: 64px;
+  width: 100%;
+  height: calc(100vh - 64px);
+}
+
+page {
+  overflow: hidden;
+}

@@ -1,0 +1,15 @@
+<!--pages/huiyibang/rule/index.wxml-->
+<view class="form_box">
+  <form bindsubmit="submitForm">
+    <view class="title">嘉宾登记信息规则 <text>设为必填项</text></view>
+    <view class="form_item rule" wx:for="{{rule_list}}" wx:key="index">
+      <view class="submit_left">
+        <text class="form_txt">{{item.title}}</text>
+      </view>
+      <view class="submit_right">
+        <checkbox value="{{item.value}}" checked="{{item.required}}" data-index="{{index}}" bindtap="clickCheckbox"/>
+      </view>
+    </view>
+    <button form-type="submit" type="primary">提交</button>
+  </form>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/addVideo/index.wxml-->
+<view class="video_box">
+  <!-- <view class="video_item" wx:if="{{into == 'add' || into == 'change'}}">
+    <text class="video_txt">允许修改</text>
+    <switch checked="{{is_status}}" bindchange="switch1Change" style="transform: scale(0.7);" />
+  </view> -->
+  <view class="video_item">
+    <text class="video_txt">序号</text>
+    <view><input type="number" placeholder="请输入视频序号" value="{{sort}}" bindinput="changeSort"></input></view>
+     <!-- disabled="{{is_disable}}" -->
+  </view>
+  <view class="video_item last">
+    <text class="video_txt">视频链接</text>
+    <view><textarea placeholder="请输入视频链接" show-confirm-bar="{{false}}" maxlength="-1" bindinput="getVideoUrl" value="{{weseeLink}}"></textarea></view>
+  </view>
+  <button bindtap="addOrChangeVideo" type="primary" style="margin-top: 50rpx">提交</button>
+</view>

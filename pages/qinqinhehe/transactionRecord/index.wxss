@@ -1,0 +1,46 @@
+/* pages/transactionRecord/index.wxss */
+.filter_view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-top: 2rpx solid #cccccc;
+  border-bottom: 2rpx solid #cccccc;
+}
+.filter_item{
+  width: 33.3%;
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  border-right: 2rpx solid #cccccc;
+}
+.filter_item:last-child{
+  border-right: 0;
+}
+
+.filter_list_box{
+  box-sizing: border-box;
+}
+.filter_list_item{
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #f1f1f1;
+}
+.filter_list_item image{
+  width: 136rpx;
+  height: 136rpx;
+  margin-right: 20rpx;
+  /* background: #cccccc; */
+}
+.filter_list_item .filter_box{
+  width: 40%;
+  font-size: 24rpx;
+}
+.filter_list_item .filter_box .first{
+  margin-bottom: 30rpx;
+}

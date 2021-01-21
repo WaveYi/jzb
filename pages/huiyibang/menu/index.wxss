@@ -1,0 +1,84 @@
+/* pages/huiyibang/menu/index.wxss */
+.house_list_box{
+  margin-bottom: 100rpx;
+  padding-bottom: 50rpx;
+}
+.house_item{
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.house_item image{
+  width: 100rpx;
+  height: 100rpx;
+  /* background-color: #cccccc; */
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+.house_box{
+  width: 60%;
+  font-size: 22rpx;
+}
+.house_edit{
+  width: 20%;
+  text-align: right;
+}
+.house_edit button{
+  font-size: 24rpx;
+  margin-bottom: 5rpx;
+}
+.no_house{
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #42a5f5;
+  color: #ffffff;
+  font-size: 32rpx;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.project_popup_box{
+  white-space: nowrap;
+  height: 500rpx;
+  box-sizing: border-box;
+  padding: 10rpx 0;
+}
+.project_header{
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f1f1f1;
+}
+.p_cancel{
+  color: #999999;
+}
+.p_txt{
+  color: #333333;
+}
+.p_confirm{
+  color: #09bb07;
+}
+.project_item{
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f1f1f1;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.project_item radio{
+  transform: scale(0.8);
+  margin-right: 10rpx;
+}

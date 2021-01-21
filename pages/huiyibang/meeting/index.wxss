@@ -1,0 +1,199 @@
+/* pages/huiyibang/meeting/index.wxss */
+.back_img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+.meeting_box{
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 150rpx;
+  position: fixed;
+  width: 100%;
+  bottom: 150rpx;
+  z-index: 5;
+}
+.meetimg_item{
+  border: 1px solid #f1f1f1;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  width: 32%;
+  box-sizing: border-box;
+  margin-bottom: 15rpx;
+  text-align: center;
+  padding: 30rpx 0;
+}
+.meetimg_item:nth-child(3n-1){
+  margin: 0 2%;
+}
+.meetimg_item .icon{
+  display: block;
+  width: 66rpx;
+  height: 66rpx;
+  margin: 0 auto 10rpx;
+}
+.meetimg_item .icon image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.meetimg_item text{
+  color: #666666;
+  font-size: 24rpx;
+}
+.no_house{
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #42a5f5;
+  color: #ffffff;
+  font-size: 30rpx;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+}
+.no_house text{
+  font-size: 24rpx;
+}
+.no_house_txt{
+  text-align: center;
+  color: #cccccc;
+  font-size: 30rpx;
+  padding-top: 150rpx;
+}
+
+.write_table{
+  padding: 50rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.write_table input{
+  display: block;
+  width: 100%;
+  border: 1px solid #f1f1f1;
+  border-radius: 8rpx;
+  margin: 30rpx auto;
+  height: 60rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+}
+.write_table button{
+  font-size: 28rpx;
+}
+
+.personInfo_box{
+  background-color: #ffffff;
+  width: 550rpx;
+  padding: 30rpx 50rpx;
+  box-sizing: border-box;
+}
+.personTitle{
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #f1f1f1;
+  text-align: center;
+}
+.personView{
+  width: 100%;
+  font-size: 28rpx;
+  text-align: center;
+}
+.clear_btn{
+  border-radius: 10rpx;
+  position: fixed;
+  top: 10rpx;
+  right: 10rpx;
+  z-index: 50;
+  display: block;
+  padding: 0;
+  border-radius: 8rpx;
+}
+
+
+.project_popup_box{
+  white-space: nowrap;
+  height: 500rpx;
+  box-sizing: border-box;
+  padding: 10rpx 0;
+}
+.project_header{
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f1f1f1;
+}
+.p_cancel{
+  color: #999999;
+}
+.p_txt{
+  color: #333333;
+}
+.p_confirm{
+  color: #09bb07;
+}
+.project_item{
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f1f1f1;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.project_item radio{
+  transform: scale(0.8);
+  margin-right: 10rpx;
+}
+
+
+.form_box{
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.form_item{
+  margin-bottom: 20rpx;
+}
+.form_item .form_txt{
+  color: #999;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form_item .form_content{
+  margin-top: 10rpx;
+  border: 1px solid #ccc;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+}
+.form_item .form_txt .add{
+  color: #42a5f5;
+}
+.video_sort{
+  color: #333333;
+  font-size: 24rpx;
+  margin: 10rpx 0;
+}
+.form_item .form_content textarea{
+  width: 100%;
+  height: 150rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}

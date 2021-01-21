@@ -1,0 +1,25 @@
+/* pages/huiyibang/invition/index.wxss */
+.house_list_box{
+  padding-bottom: 100rpx;
+  margin-bottom: 48px;
+}
+.house_item{
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.house_box{
+  width: 70%;
+  font-size: 22rpx;
+}
+.house_edit{
+  width: 30%;
+  text-align: right;
+}
+.house_edit button{
+  font-size: 24rpx;
+  margin-bottom: 5rpx;
+}

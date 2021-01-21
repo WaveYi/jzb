@@ -1,0 +1,6 @@
+/* pages/factorPage/factorPage1/factorPage01/index.wxss */
+.buttton{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 20rpx;
+}

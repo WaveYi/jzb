@@ -1,0 +1,17 @@
+/* pages/myBuyCouponDetail/index.wxss */
+.detail_item{
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail_left{
+  color: #333333;
+  font-size: 26rpx;
+}
+.detail_right{
+  color: #999999;
+  font-size: 24rpx;
+}

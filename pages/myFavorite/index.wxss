@@ -1,0 +1,14 @@
+/* pages/myFavorite/index.wxss */
+.buttton{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 20rpx;
+}
+.image {
+  width: 100%;
+  margin-top: 128rpx;
+  height: calc(100vh - 128rpx);
+  position: fixed;
+  left: 0;
+  top: 0;
+}

@@ -1,0 +1,68 @@
+<!--pages/merchant/index.wxml-->
+<view class="form_box">
+  <form bindsubmit="submitForm">
+    <view class="title">企业信息*</view>
+    <view class="form_item">
+      <text class="form_txt">企业名称</text>
+      <view class="form_content"><input placeholder="请输入企业名称" value="{{company_name}}" bindinput="getCompanyName"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">法人名称</text>
+      <view class="form_content"><input placeholder="请输入法人名称" value="{{person_name}}" bindinput="getPersonName"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">统一社会信用代码</text>
+      <view class="form_content"><input placeholder="请输入统一社会信用代码" type="text" value="{{person_code}}" bindinput="getPersonCode"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">执照</text>
+      <view class="form_content noborder">
+        <view class="add_box" bindtap="chooseLicense">
+          <text wx:if="{{is_license == 0}}">+</text>
+          <image wx:else src="{{license}}" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">企业图片</text>
+      <view class="form_content noborder">
+        <view class="add_box bg" bindtap="chooseImageFun">
+          <text wx:if="{{is_back == 0}}">+</text>
+          <image wx:else src="{{back_img}}" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="title">老板信息</view>
+    <view class="form_item">
+      <text class="form_txt">姓名</text>
+      <view class="form_content"><input placeholder="请输入姓名" value="{{name}}" bindinput="getName"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">身份证号码</text>
+      <view class="form_content"><input type="idcard" placeholder="请输入身份证号码" value="{{card}}" bindinput="getCard"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">身份证照</text>
+      <view class="form_content noborder">
+        <view class="add_box" bindtap="chooseCardImage">
+          <text wx:if="{{is_card == 0}}">+</text>
+          <image wx:else src="{{card_img}}" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">授权证书</text>
+      <view class="form_content noborder">
+        <view class="add_box" bindtap="chooseBookImage">
+          <text wx:if="{{is_book == 0}}">+</text>
+          <image wx:else src="{{book_img}}" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view> -->
+    <button form-type="submit" type="primary">{{is_from=='company'?'修改':'提交'}}</button>
+  </form>
+</view>
+
+<!-- <view class="till" wx:else>
+  已提交成功，等待审批。
+</view> -->

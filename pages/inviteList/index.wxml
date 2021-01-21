@@ -1,0 +1,19 @@
+<!--pages/inviteList/index.wxml-->
+<view>
+  <view class="nav_content_box">
+    <view class="content_item" wx:for="{{inviteList}}" wx:key="index">
+      <view class="head_left">
+        <image src="{{item.headUrl}}" mode="widthFix"></image>
+        <view>{{item.businessName}}</view>
+      </view>
+      <view class="info_right">
+        <view class="info_time">{{item.date}}</view>
+        <view class="info_btn">
+          <text wx:if="{{item.status!=0}}">{{item.status==1?'已同意':'已拒绝'}}</text>
+          <button size="mini" wx:if="{{item.status==0}}" type="primary" data-index="{{index}}" data-id="{{item.bossId}}" bindtap="clickAgree">同意</button>
+          <button size="mini" wx:if="{{item.status==0}}" type="default" data-index="{{index}}" data-id="{{item.bossId}}" bindtap="clickReject">拒绝</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

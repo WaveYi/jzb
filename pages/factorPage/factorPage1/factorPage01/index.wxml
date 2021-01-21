@@ -1,0 +1,10 @@
+<!--pages/factorPage/factorPage1/factorPage01/index.wxml-->
+<!--pages/factorPage/index.wxml-->
+<image class="image"  mode="aspectFit" src="/assets/give.jpg" style="background-size:cover;"></image>
+<image class="image"  mode="aspectFit" src="/assets/give1.jpg"  style="background-size:cover;"></image>
+<image class="image"  mode="aspectFit" src="/assets/give2.jpg" style="background-size:cover;"></image>
+<button bindtap="clcikButton" class="buttton" type="primary"></button>
+<button bindtap="clcikButton1" class="buttton" type="primary"></button>
+<button bindtap="clcikButton2" class="buttton" type="primary"></button>
+<button bindtap="clcikButton3" class="buttton" type="primary"></button>
+<button bindtap="clcikButton4" class="buttton" type="primary"></button>

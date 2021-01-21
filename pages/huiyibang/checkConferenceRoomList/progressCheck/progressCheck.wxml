@@ -1,0 +1,16 @@
+<!--pages/huiyibang/checkConferenceRoomList/progressCheck/progressCheck.wxml-->
+<!-- item.status: 0:未开始 1:正在进行 2:节目结束 3:移除 -->
+<view class="content">
+  <view class="list" wx:for="{{progremList}}" wx:key="index">
+    <view class="list_title">已表演</view>
+    <view wx:if="{{item.status == 2}}">{{item.status}}</view>
+  </view>
+  <view class="list"  wx:for="{{progremList}}" wx:key="index">
+    <view class="list_title">未表演</view>
+    <view wx:if="{{item.status == 0}}">{{item.describe}}</view>
+  </view>
+  <view class="list"  wx:for="{{progremList}}" wx:key="index">
+    <view class="list_title">当前节目</view>
+    <view wx:if="{{item.status == 1}}">{{item.describe}}</view>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/video/index.wxml-->
+<video src="{{url}}" autoplay loop></video>

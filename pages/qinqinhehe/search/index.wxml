@@ -1,0 +1,14 @@
+<!--pages/search/index.wxml-->
+<view>
+  <wxs module="status" src="../../../filter/status.wxs"></wxs>
+  <view class="search_box">
+    <view class="search_item" wx:for="{{searchList}}" wx:key="index">
+      <view class="search_info">
+        <image src="{{item.headUrl}}"></image>
+        {{item.businessName}}
+      </view>
+      <!-- <text wx:if="{{item.status == '0'}}">已申请</text> -->
+      <button size="mini" data-index="{{index}}" bindtap="addRole">申请</button>
+    </view>
+  </view>
+</view>

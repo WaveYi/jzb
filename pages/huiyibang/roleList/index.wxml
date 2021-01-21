@@ -1,0 +1,24 @@
+<!--pages/huiyibang/checkList/index.wxml-->
+<view class="check_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{role_list}}" wx:key="index" data-index="{{index}}">
+    <view class="house_box">
+      <view class="status">角色类型：{{status.roleStatus(item.roleType)}}</view>
+      <!-- <view class="date">创建时间：{{item.createdTime}}</view> -->
+      <block wx:if="{{role_type != '0'}}">
+        <view>申请人名称：{{item.userInfo.nickname}}</view>
+        <view>申请企业：{{item.meetingRoom.sponsorBusinessName}}</view>
+      </block>
+      <view class="status">状态：{{status.homeRoleStatus(item.status)}}</view>
+    </view>
+    <view class="house_edit" wx:if="{{room_role != 6}}">
+      <block wx:if="{{role_type != '0'}}">
+        <button wx:if="{{item.status==1}}" size="mini" type="primary" data-item="{{item}}" catchtap="agreeRole">同意</button>
+        <button wx:if="{{item.status==1}}" size="mini" type="warn" data-item="{{item}}" catchtap="rejectRole">拒绝</button>
+        <button size="mini" type="warn" data-id="{{item.idKey}}" wx:if="{{item.roleType!=1}}" catchtap="deleteRole">删除</button>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{role_type == '0'}}" class="no_house" bindtap="toCreate">申请角色</view>

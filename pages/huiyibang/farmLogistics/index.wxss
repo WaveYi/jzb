@@ -1,0 +1,45 @@
+/* pages/huiyibang/farmLogistics/index.wxss */
+.nav_list{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 30rpx;
+}
+.nav_list view{
+  width: 30%;
+  text-align: center;
+  color: #000;
+  font-size: 30rpx;
+  border: 1px solid #737c81;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  border-radius: 20rpx 20rpx 0 0;
+}
+.nav_list view.on{
+  background: rgba(55, 68, 74, 1);
+  color: #fff;
+}
+.nav_content{
+  padding: 20rpx 5%;
+  box-sizing: border-box;
+}
+.seller_coupon_item{
+  padding: 10rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #cccccc;
+}
+.seller_top,.seller_bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.seller_bottom{
+  justify-content: flex-end;
+}
+.seller_top{
+  margin-bottom: 10rpx;
+}
+.seller_top text,.seller_bottom text{
+  color: #999999;
+  font-size: 28rpx;
+}

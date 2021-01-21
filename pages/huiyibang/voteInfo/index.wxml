@@ -1,0 +1,14 @@
+<!--pages/huiyibang/voteInfo/index.wxml-->
+<view class="house_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{list}}" wx:key="index" data-index="{{index}}" bindtap="toMenuPage">
+    <!-- <image src="{{item.headUrl}}" mode="widthFix"></image> -->
+    <view class="house_box">
+      <view class="name">会议名称：{{item.roomName}}</view>
+      <view class="name">节目标题：{{item.menuName}}</view>
+      <view class="name">节目类型：{{item.type}}</view>
+      <view class="name">用户名称：{{item.userName}}</view>
+      <view class="time">创建时间：{{item.createdTime}}</view>
+    </view>
+  </view>
+</view>

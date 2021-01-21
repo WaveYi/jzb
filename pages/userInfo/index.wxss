@@ -1,0 +1,233 @@
+page {
+  background: #f2f2f2;
+}
+button{
+  background: none;
+  padding: 0;
+}
+button::after{
+  border: 0;
+}
+button.button-hover{
+  background: none;
+}
+.back {
+  width: 100%;
+  height: 400rpx;
+  background: rgba(55, 68, 74, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  /* margin-bottom: 10rpx; */
+  /* position: relative; */
+  /* margin-top: 64px; */
+}
+.home_icon{
+  width: 56rpx;
+  height: 56rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  z-index: 5;
+}
+
+.user {
+  width: 100%;
+  height: 240rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.change_btn{
+  border-radius: 10rpx;
+  display: block;
+  padding: 0;
+  border-radius: 8rpx;
+}
+.avatar {
+  border: 20rpx solid #737c81;
+  overflow: hidden;
+}
+
+.name {
+  width: 100%;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(255, 255, 255, 1);
+  display: block;
+  text-align: center;
+}
+
+.nav_list{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 30rpx;
+}
+.nav_list view{
+  width: 30%;
+  text-align: center;
+  color: #000;
+  font-size: 30rpx;
+  border: 1px solid #737c81;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  border-radius: 20rpx 20rpx 0 0;
+}
+.nav_list view.on{
+  background: rgba(55, 68, 74, 1);
+  color: #fff;
+}
+
+.nav_content{
+  padding: 20rpx 5%;
+  box-sizing: border-box;
+}
+
+.scroll_view_H{
+  white-space: nowrap;
+}
+.scroll_item{
+  display: inline-block;
+  width: 300rpx;
+  margin-right: 30rpx;
+}
+.scroll_item .txt{
+  display: block;
+  color: #333333;
+  font-size: 28rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.scroll_item image{
+  width: 100%;
+}
+.scroll_item button{
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  margin: 20rpx auto 0;
+}
+
+.promotion_list_box{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.promotion_list_box .promotion_item{
+  width: 30%;
+}
+.promotion_list_box .promotion_item .item_box{
+  /* width: 200rpx; */
+  padding: 5rpx 5rpx 10rpx;
+  box-sizing: border-box;
+  background: rgba(47,53,57,0.7);
+  border-radius: 20rpx;
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+.promotion_list_box .promotion_item .img{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.promotion_list_box .promotion_item image{
+  max-width: 100rpx;
+  max-height: 100rpx;
+}
+.promotion_list_box .promotion_item text{
+  display: block;
+  color: #fff;
+  font-size: 25rpx;
+}
+
+.nav_content image{
+  display: block;
+  margin: 0 auto;
+}
+
+.scanCode {
+  /* position: fixed; */
+  /* bottom: 70rpx; */
+  display: block;
+  width: 90%;
+  margin: 20rpx auto;
+  /* left: calc(50% - 40%); */
+  line-height: 88rpx;
+}
+
+.title {
+  font-size: 36rpx !important;
+  color: #fff !important;
+}
+
+.navBar {
+  background: #212121 !important;
+}
+
+.mine image{
+  position: absolute;
+  width: 81rpx;
+  height: 98rpx;
+  right: 30rpx;
+  bottom: 22rpx;
+  z-index: 21;
+}
+
+.seller_coupon_item{
+  padding: 10rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #cccccc;
+}
+.seller_top,.seller_bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.seller_top{
+  margin-bottom: 10rpx;
+}
+.seller_top text,.seller_bottom text{
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.user_code_box{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background: rgba(0,0,0,.5);
+  display: none;
+}
+.user_code_box.show{
+  display: flex;
+}
+.user_code_box image{
+  display: block;
+  width: 400rpx;
+  height: 400rpx;
+}
+.clear_btn{
+  border-radius: 10rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  z-index: 50;
+  display: block;
+  padding: 0;
+  border-radius: 8rpx;
+}

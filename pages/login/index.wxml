@@ -1,0 +1,7 @@
+<image class="logo" size="mini" src="/assets/logo.jpg"></image>
+<button class="login" wx:if="{{is_auth}}" open-type="getPhoneNumber" bind:getphonenumber="getUserInfoFun" type="primary" lang='zh_CN'>微信用户授权手机号</button>
+<button class="login" wx:else open-type="getUserInfo" bind:getuserinfo="userInfo" type="primary">微信用户授权登录</button>
+<view class="protocol">
+  点击登陆,即表示已阅读
+  <text bindtap="toProtocol">《法律条款与隐私协议》</text>
+</view>

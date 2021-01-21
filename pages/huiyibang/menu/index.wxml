@@ -1,0 +1,43 @@
+<!--pages/huiyibang/menu/index.wxml-->
+<view class="house_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{menu_list}}" bindlongpress="delMenuProject" data-id="{{item.idKey}}" wx:key="index">
+    <image src="{{item.img}}" mode="widthFix"></image>
+    <view class="house_box">
+      <view class="house_name">节目标题：{{item.title}}</view>
+      <!-- <view class="name">{{item.compereId}}</view> -->
+      <!-- <view class="phone">节目描述：{{item.describe}}</view> -->
+      <view class="date">开始时间：{{item.startTime}}</view>
+      <view class="date">结束时间：{{item.endTime}}</view>
+      <view class="status">节目类型：{{status.projectStatus(item.type)}}</view>
+      <view class="status">节目状态：{{status.menuStatus(item.status)}}</view>
+    </view>
+    
+    <view class="house_edit" wx:if="{{is_from==''}}">
+      <button size="mini" type="default" data-item="{{item}}" data-index="{{index}}" catchtap="operating">操作</button>
+      <!-- <button size="mini" type="default" data-item="{{item}}" data-index="{{index}}" catchtap="move">移动</button> -->
+      <button wx:if="{{item.status == 0}}" size="mini" type="primary" data-item="{{item}}" data-index="{{index}}" catchtap="start">开始</button>
+      <button wx:if="{{item.status == 1}}" size="mini" type="warn" data-item="{{item}}" catchtap="ending">结束</button>
+      <!-- <button wx:if="{{item.status != 2}}" size="mini" type="primary" data-item="{{item}}" catchtap="lookVideo">视频</button> -->
+      <button wx:if="{{item.status == 1 && (item.type == 1 || item.type == 3)}}" size="mini" type="primary" data-item="{{item}}" bindtap="toVote">抽奖</button>
+      <button wx:if="{{item.status == 1 && item.type == 1}}" size="mini" type="primary" data-item="{{item}}" bindtap="toSend">赠送</button>
+    </view>
+  </view>
+</view>
+
+<van-popup show="{{ show1 }}" bind:close="onClose1" position="bottom">
+  <view class="project_header">
+    <text class="p_cancel" bindtap="onClose1">取消</text>
+    <view class="p_txt">选择项目</view>
+    <text class="p_confirm" bindtap="selectConfirm">确定</text>
+  </view>
+  <scroll-view scroll-y bindscrolltolower="loadMore" class="project_popup_box">
+    <radio-group bindchange="selectProject">
+      <view class="project_item" wx:for="{{project_list}}" wx:key="index">
+        <radio value="{{index}}" checked="{{is_checked}}" /> {{item.typeName}}
+      </view>
+    </radio-group>
+  </scroll-view>
+</van-popup>
+
+<view wx:if="{{is_from==''}}" class="no_house" bindtap="toCreate">添加节目</view>

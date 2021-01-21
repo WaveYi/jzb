@@ -1,0 +1,196 @@
+/* pages/promotion/index.wxss */
+button{
+  background: none;
+  padding: 0;
+}
+button::after{
+  border: 0;
+  background: none;
+}
+button.button-hover{
+  background: none;
+}
+.promotion_box{
+  position: relative;
+}
+.promotion_box .back_img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+}
+.person_box{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100vh;
+}
+.person_info_box{
+  height: 20vh;
+  text-align: center;
+  padding-top: 50rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.person_info_box .issue_btn{
+  background: #ff0000;
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  z-index: 10;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 24rpx;
+  color: #ffffff;
+}
+.left_btn{
+  border-radius: 10rpx;
+  position: absolute;
+  top: 50%;
+  left: 60rpx;
+  z-index: 10;
+  display: block;
+  padding: 0;
+}
+.phone_btn{
+  border-radius: 10rpx;
+  position: fixed;
+  top: 100rpx;
+  left: 60rpx;
+  z-index: 10;
+  display: block;
+  padding: 0;
+  border-radius: 8rpx;
+}
+.clear_btn{
+  border-radius: 10rpx;
+  position: fixed;
+  top: 10rpx;
+  right: 10rpx;
+  z-index: 50;
+  display: block;
+  padding: 0;
+  border-radius: 8rpx;
+}
+.change_btn{
+  border-radius: 10rpx;
+  position: fixed;
+  top: 10rpx;
+  left: 10rpx;
+  z-index: 50;
+  display: block;
+  padding: 0;
+  border-radius: 8rpx;
+}
+.scanCode{
+  border-radius: 10rpx;
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  z-index: 10;
+}
+.person_avatar{
+  width:152rpx;
+  height:152rpx;
+  border:2px solid rgba(107,161,233,1);
+  border-radius:50%;
+  margin: 0 auto;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.person_avatar image{
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  background: #999;
+  border-radius: 50%;
+}
+.person_name{
+  color: #37444A;
+  font-size: 40rpx;
+}
+
+.mine image{
+  position: absolute;
+  width: 81rpx;
+  height: 98rpx;
+  right: 30rpx;
+  bottom: 22rpx;
+  z-index: 21;
+}
+
+.browse_box{
+  height: 80vh;
+  padding: 20rpx 0 0 60rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.scroll_view_H{
+  white-space: nowrap;
+}
+.scroll_item{
+  display: inline-block;
+  vertical-align: top;
+  width: 300rpx;
+  max-height: 880rpx;
+  margin-right: 30rpx;
+}
+.scroll_item .txt{
+  display: block;
+  color: #ffffff;
+  font-size: 28rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.scroll_item image{
+  display: block;
+  width: 100%;
+  max-height: 850rpx;
+  min-height: 700rpx;
+}
+.customize_add{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333333;
+  font-size: 30rpx;
+  text-align: center;
+  position: absolute;
+  width: 250rpx;
+  left: 15rpx;
+  top: 0;
+  z-index: 15;
+}
+.template_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333333;
+  font-size: 30rpx;
+  text-align: center;
+  position: absolute;
+  right: 30rpx;
+  top: 0;
+  z-index: 15;
+}
+.customize_add button,.template_btn button{
+  margin: 0;
+}
+
+.business_picker{
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 5rpx;
+}
+.my_business_box{
+  color: #333333;
+  font-size: 28rpx;
+}

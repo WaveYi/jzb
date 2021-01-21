@@ -1,0 +1,12 @@
+<!--pages/huiyibang/farm/index.wxml-->
+<view class="nav_content" wx:if="{{couponList.length!=0}}">
+  <view class="seller_coupon_item" wx:for="{{couponList}}" wx:key="index">
+    <view class="seller_top">促销券名称：{{item.coupon_name}}</view>
+    <view class="seller_bottom">
+      <button size="mini" type="default" data-index="{{index}}" data-item="{{item}}" bindtap="clickDetail">详情</button>
+      <button size="mini" type="primary" data-index="{{index}}" data-item="{{item}}" bindtap="clickLogistics">物流</button>
+    </view>
+  </view>
+</view>
+
+<view class="no_data_txt" wx:else>暂无数据</view>

@@ -1,0 +1,35 @@
+<!--pages/huiyibang/addTable/index.wxml-->
+<view class="form_box">
+  <form bindsubmit="submitForm">
+    <view class="title">{{title}}*</view>
+    <view class="form_item">
+      <text class="form_txt">桌子名字</text>
+      <view class="form_content"><input placeholder="请输入桌子名字" value="{{table_name}}" data-key="table_name" bindinput="getInputVal"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">桌子编号</text>
+      <view class="form_content"><input placeholder="请输入桌子编号" value="{{table_number}}" data-key="table_number" bindinput="getInputVal"></input></view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">桌子容量</text>
+      <view class="form_content noborder">
+        <picker mode="selector" range="{{table_capacity}}" bindchange="bindCapacityChange">
+          <view class="picker">
+            {{capacity_index}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">桌子职位</text>
+      <view class="form_content noborder">
+        <picker mode="selector" range="{{table_position}}" range-key="val" bindchange="bindPickerChange">
+          <view class="picker">
+            {{position_index?table_position[position_index].val:'请选择职位'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <button form-type="submit" type="primary" style="margin-top: 80rpx;">提交</button>
+  </form>
+</view>

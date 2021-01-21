@@ -1,0 +1,8 @@
+<!--pages/huiyibang/memberArrange/index.wxml-->
+
+<van-cell-group>
+    <van-cell is-link title="申请人员浏览" data-url="/pages/huiyibang/memberArrange_list/apply_list/apply_list" bindtap="pageTo" />
+    <van-cell is-link title="在职人员浏览" data-url="/pages/huiyibang/memberArrange_list/hired_list/hired_list" bindtap="pageTo" />
+    <!-- <van-cell is-link title="促销券使用记录" data-url="/pages/couponUseList/index" bindtap="pageTo" />
+    <van-cell is-link title="二维码视频浏览记录" data-url="/pages/qinqinhehe/myBrowse/index" bindtap="pageTo" /> -->
+</van-cell-group>

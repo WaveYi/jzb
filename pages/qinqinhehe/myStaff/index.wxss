@@ -1,0 +1,60 @@
+/* pages/myStaff/index.wxss */
+.nav_content_box{
+  padding: 0 30rpx;
+  max-height: 80vh;
+  box-sizing: border-box;
+}
+.nav_content_box .content_item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+.nav_content_box .content_item .head_left{
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nav_content_box .content_item .head_left image{
+  display: block;
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.nav_content_box .content_item .head_left view{
+  color: #333;
+  max-width: 200rpx;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nav_content_box .content_item .info_right{
+  width: 58%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav_content_box .content_item .info_right .info_time{
+  color: #999999;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.nav_content_box .content_item .info_right .info_btn{
+  text-align: right;
+  width: 50%;
+}
+.nav_content_box .content_item .info_right .info_btn text{
+  display: block;
+  color: #999999;
+}
+.nav_content_box .content_item .info_right .info_btn button{
+  font-size: 24rpx;
+}

@@ -1,0 +1,18 @@
+<!--pages/recordList/index.wxml-->
+<view>
+  <view class="nav_list">
+    <view bindtap="clickNav" data-index="{{index}}" class="{{nav_active==index?'on':''}}" wx:for="{{nav_list}}" wx:key="index">{{item}}</view>
+  </view>
+  <view class="nav_content" wx:if="{{nav_active == 0}}">
+    <view class="record_item" wx:for="{{memberList}}" wx:key="index">
+      <view class="record_txt">{{item.record}}</view>
+      <view class="record_time">{{item.date}}</view>
+    </view>
+  </view>
+  <view class="nav_content" wx:if="{{nav_active == 1}}">
+    <view class="record_item" wx:for="{{couponList}}" wx:key="index">
+      <view class="record_txt">{{item.record}}</view>
+      <view class="record_time">{{item.date}}</view>
+    </view>
+  </view>
+</view>

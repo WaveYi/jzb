@@ -1,0 +1,5 @@
+<!--pages/huiyibang/myInvitationCard/index.wxml-->
+<image src="{{card_img}}" mode="widthFix"></image>
+<view class="invitation">
+  <button type="primary" bindtap="agreeInvitation">同意邀请</button>
+</view>

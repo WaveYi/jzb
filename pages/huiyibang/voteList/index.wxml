@@ -1,0 +1,14 @@
+<!--pages/huiyibang/voteList/index.wxml-->
+<view class="house_list_box">
+  <view class="house_item" wx:for="{{vote_list}}" wx:key="index" data-index="{{index}}">
+    <view class="house_box">
+      <view class="name">节目名称：{{item.title}}</view>
+      <view class="name">被选举人名称：{{item.electorName}} <!-- item.compereName?item.compereName:'' --></view>
+      <view>支持投票数：{{item.supportVoteNum}}</view>
+      <view>不支持投票数：{{item.noSupportVoteNum}}</view>
+    </view>
+    <view class="house_edit">
+      <button size="mini" type="primary" data-item="{{item}}" catchtap="lookDetail">详情</button>
+    </view>
+  </view>
+</view>

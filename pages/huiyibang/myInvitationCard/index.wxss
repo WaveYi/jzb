@@ -1,0 +1,9 @@
+/* pages/huiyibang/myInvitationCard/index.wxss */
+image{
+  display: block;
+  width: 100%;
+}
+.invitation{
+  padding: 50rpx 30rpx;
+  box-sizing: border-box;
+}

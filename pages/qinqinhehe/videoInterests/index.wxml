@@ -1,0 +1,82 @@
+<!--pages/videoInterests/index.wxml-->
+<view>
+  <!-- <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    show-action
+    bind:search="onSearch"
+    bind:cancel="onCancel"
+  /> -->
+  
+  <view style="padding-bottom: 100rpx">
+    <radio-group bindchange="radioChange">
+      <view class="code_item" wx:for="{{video_list}}" wx:key="index">
+        <radio value="{{item.typeId}}" checked="{{is_checked}}" data-index="{{index}}" data-item="{{item}}" bindtap="clickRadio"></radio>
+        <image src="{{item.img}}" data-id="{{item.typeId}}" data-name="{{item.typeName}}" data-item="{{item}}" bindtap="showPopup" mode="aspectFit"></image>
+        <view class="code_right" data-id="{{item.typeId}}" data-name="{{item.typeName}}" data-item="{{item}}" bindtap="showPopup">
+          <view><text>名称：{{item.typeName}}</text><text>起始id：{{item.min?item.min:'空'}}</text></view>
+          <view><text>数量：{{item.count?item.count:0}}</text><text>终止id：{{item.max?item.max:'空'}}</text></view>
+          <!-- <view class="num_btn">选择数量</view> -->
+        </view>
+      </view>
+    </radio-group>
+    <radio-group bindchange="radioChange" wx:if="{{identity!=1}}">
+      <view class="code_item" wx:for="{{project_list}}" wx:if="{{item.count}}" wx:key="index">
+        <radio value="{{item.typeId}}" checked="{{is_checked}}" data-index="{{index}}" data-item="{{item}}" bindtap="clickRadio"></radio>
+        <image src="{{item.img}}" data-id="{{item.typeId}}" data-name="{{item.typeName}}" data-item="{{item}}" bindtap="showPopup" mode="aspectFit"></image>
+        <view class="code_right" data-id="{{item.typeId}}" data-name="{{item.typeName}}" data-item="{{item}}" bindtap="showPopup">
+          <view><text>名称：{{item.typeName}}</text><text>起始id：{{item.min?item.min:'空'}}</text></view>
+          <view><text>数量：{{item.count?item.count:0}}</text><text>终止id：{{item.max?item.max:'空'}}</text></view>
+          <!-- <view class="num_btn">选择数量</view> -->
+        </view>
+      </view>
+      <view class="no_data_txt" wx:if="{{video_list.length==0}}">暂无数据</view>
+    </radio-group>
+  </view>
+
+  <view class="add_bottom_btn" wx:if="{{identity=='1'}}">
+    <view bindtap="toAddType" style="border-right: 2rpx solid #ffffff">新增权益类型</view>
+    <!-- <view bindtap="toAdd">新增权益</view> -->
+    <view bindtap="toTransfer">项目转移</view>
+  </view>
+  <view class="add_bottom_btn" wx:if="{{identity != '1' && (type == '1' || type=='2'||type=='7')}}">
+    <view bindtap="toAddType" style="border-right: 2rpx solid #ffffff">新增项目</view>
+    <view bindtap="toTransfer">项目转移</view>
+  </view>
+
+  <van-popup show="{{ show }}" bind:close="onClose">
+    <view class="popup_box">
+      <view class="popup_title">已选数量：<input type="number" disabled="{{is_disabled}}" value="{{total}}" bindinput="setTotal"></input> 个</view>
+      <view class="popup_title" wx:if="{{index==0}}">起始id：<input type="number" style="width: 250rpx;" placeholder="请输入起始id" bindblur="getCount" value="{{start_code}}" bindinput="setStartCode"></input></view>
+      <view class="popup_title" wx:if="{{index==0}}">终止id：<input type="number" style="width: 250rpx;" placeholder="请输入终止id" bindblur="getCount" value="{{end_code}}" bindinput="setEndCode"></input></view>
+      <view class="picker_box">
+        <block wx:if="{{click_transfer == 1}}">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <button type="primary" hover-class="none" size="mini">{{select_txt}}</button>
+          </picker>
+          <picker bindchange="bindPickerChange1" value="{{index1}}" range="{{array1}}">
+            <button type="primary" hover-class="none" size="mini">{{edit_txt}}</button>
+          </picker>
+        </block>
+        <block wx:else>
+          <button type="primary" hover-class="none" size="mini" bindtap="next">下一步</button>
+        </block>
+      </view>
+    </view>
+  </van-popup>
+
+  <van-popup show="{{ show1 }}" bind:close="onClose1" position="bottom">
+    <view class="project_header">
+      <text class="p_cancel" bindtap="onClose1">取消</text>
+      <view class="p_txt">选择项目</view>
+      <text class="p_confirm" bindtap="selectConfirm">确定</text>
+    </view>
+    <scroll-view scroll-y bindscrolltolower="loadMore" class="project_popup_box">
+      <radio-group bindchange="selectProject">
+        <view class="project_item" wx:for="{{project_list}}" wx:key="index">
+          <radio value="{{item.typeId}}" checked="{{is_checked}}" /> {{item.typeName}}
+        </view>
+      </radio-group>
+    </scroll-view>
+  </van-popup>
+</view>

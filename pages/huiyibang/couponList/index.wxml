@@ -1,0 +1,10 @@
+<!--pages/huiyibang/couponList/index.wxml-->
+<view class="house_list_box">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{list}}" wx:key="index" data-index="{{index}}" bindtap="toMenuPage">
+    <!-- <image src="{{item.headUrl}}" mode="widthFix"></image> -->
+    <view class="house_box">
+      <view class="name">会议名称：{{item.roomName}}</view>
+    </view>
+  </view>
+</view>

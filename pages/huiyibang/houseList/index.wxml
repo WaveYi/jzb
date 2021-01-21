@@ -1,0 +1,24 @@
+<!--pages/huiyibang/houseList/index.wxml-->
+<view class="house_list_box" wx:if="{{house_list.length>0}}">
+  <wxs src="../../../filter/status.wxs" module="status"></wxs>
+  <view class="house_item" wx:for="{{house_list}}" wx:key="index" data-index="{{index}}" bindtap="toMenuPage">
+    <image src="{{item.roomImg}}" mode="widthFix"></image>
+    <view class="house_box">
+      <view class="house_name">举办方企业名称：{{item.sponsorBusinessName}}</view>
+      <view class="name">主办方名字：{{item.sponsorName}}</view>
+      <view class="name">会议名称：{{item.name}}</view>
+      <view class="phone">手机号：{{item.phone}}</view>
+      <view class="date">开始时间：{{item.activityStartTime}}</view>
+      <view class="date">结束时间：{{item.activityEndTime}}</view>
+      <view class="status">会议状态：{{status.menuStatus(item.status)}}</view>
+    </view>
+    <view class="house_edit" wx:if="{{user_id == item.createdUserId}}">
+      <button size="mini" type="primary" data-item="{{item}}" catchtap="changeHouse">修改</button>
+      <button size="mini" type="warn" data-id="{{item.idKey}}" catchtap="deleteHouse">删除</button>
+    </view>
+  </view>
+</view>
+
+<view class="no_house_txt" wx:else>暂无会议</view>
+
+<!-- <view class="no_house" bindtap="toCreate" wx:if="{{identidy==1 || identidy==2}}">创建房间</view> -->

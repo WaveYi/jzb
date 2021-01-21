@@ -1,0 +1,48 @@
+/* pages/applyCompany/index.wxss */
+.form_item{
+  padding: 15rpx 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+.form_item .form_txt{
+  font-size: 28rpx;
+}
+.form_item .form_content{
+  margin-top: 10rpx;
+  border: 1px solid #ccc;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+.form_item .form_content.noborder{
+  border: 0;
+}
+.form_item .form_content input{
+  font-size: 28rpx;
+}
+.picker_txt{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.picker_txt image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 15rpx;
+}
+
+.form_btn{
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+button{
+  margin-top: 50rpx;
+}
+button::after{
+  border: 0;
+}

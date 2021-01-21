@@ -1,0 +1,2 @@
+<!--pages/shipment/index.wxml-->
+<ec-canvas id="mychart" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>

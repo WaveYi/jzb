@@ -1,0 +1,15 @@
+<!--pages/qinqinhehe/companyApprove/index.wxml-->
+<view class="company_box">
+  <view class="company_item" wx:for="{{company_list}}" wx:key="index">
+    <view class="company_left">
+      <view>企业名称: {{item.businessName}}</view>
+      <!-- <view>老板名称: {{item.bossName}}</view> -->
+      <view>法人名称: {{item.legalPerson}}</view>
+      <view>审批状态: {{item.status==0?'待审批':item.status==1?'已同意':'已拒绝'}}</view>
+    </view>
+    <view class="company_right" wx:if="{{item.status==0}}">
+      <button size="mini" type="primary" data-item="{{item}}" catchtap="agreeBtn">同意</button>
+      <button size="mini" type="warn" data-item="{{item}}" catchtap="rejectBtn">拒绝</button>
+    </view>
+  </view>
+</view>

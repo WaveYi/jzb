@@ -1,0 +1,19 @@
+<!--pages/myBrowse/index.wxml-->
+<view class="video_list_box" wx:if="{{list.length!=0}}">
+  <view class="video_list_content">
+    <view class="video_list_item" data-id="{{item.codeId}}" bindtap="clickItem" wx:for="{{list}}" wx:key="index">
+      <image src="{{item.img}}" mode="aspectFit"></image>
+      <view class="video_list_info">
+        <view>名称：{{item.typeName}}</view>
+        <view>浏览时间：{{item.date}}</view>
+        <view>二维码id：{{item.codeId}}</view>
+      </view>
+    </view>
+  </view>
+
+  <van-popup show="{{ show }}" bind:close="onClose">
+    <image src="{{code_img}}" mode="widthFix"></image>
+  </van-popup>
+</view>
+
+<view class="no_data_txt" wx:else>暂无数据</view>

@@ -1,0 +1,24 @@
+<!--pages/shopTransfer/index.wxml-->
+<view class="transfer_box">
+  <van-button bindtap="shopTransfer" class="shop_btn" color="#37444A" type="primary" size="small">店铺转让</van-button>
+  <view class="table_box">
+    <view class="table_item">
+      <view class="table_th">店铺</view>
+      <view class="table_th">交易人</view>
+      <view class="table_th">交易类型</view>
+      <view class="table_th">操作</view>
+    </view>
+    <view class="table_item" wx:if="{{is_shop==true}}">
+      <view class="table_td">{{shopInfo.businessName}}</view>
+      <view class="table_td">{{shopInfo.nickname}}</view>
+      <view class="table_td">{{shopInfo.type=='1'?'转出':'转入'}}</view>
+      <view class="table_td">
+        <text wx:if="{{shopInfo.status!=0}}">{{shopInfo.status==1?'已同意':'已拒绝'}}</text>
+        <block wx:else>
+          <button type="primary" size="mini" bindtap="transferAgree">同意</button>
+          <button type="default" size="mini" bindtap="transferReject">拒绝</button>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

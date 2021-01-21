@@ -1,0 +1,96 @@
+<!-- <van-nav-bar title="教课帮" custom-class="navBar" fixed border="{{false}}" title-class="title" bind:click-left="onClickLeft">
+  <van-icon color="#fff" size="32rpx" name="arrow-left" slot="left" />
+</van-nav-bar> -->
+<view class="back">
+  <!-- <image src="/assets/home.png" class="home_icon" bindtap="toPromotionPage"></image> -->
+  <view class="user" bindtap="getUserLogin">
+    <van-image custom-class="avatar" round width="140rpx" height="140rpx" src="{{avatar}}" />
+    <text class="name">{{name?name:'点击登录账户'}}</text>
+  </view>
+  <!-- <block wx:if="{{name && identityList.length != 0}}">
+    <van-button catch:click="changeIdentity" class="change_btn" color="#169bd5" type="primary" size="small" custom-style="border-radius: 10rpx">切换身份</van-button>
+  </block> -->
+  <van-button wx:if="{{check_login == 1}}" catch:click="updateToken" class="clear_btn" color="#333333" type="primary" size="small">更新数据</van-button>
+</view>
+<view>
+  <!-- <van-button bind:click="scanCode" color="#37444A" icon="scan" class="scanCode" type="primary" size="large">
+    扫码播放视频
+  </van-button>  -->
+  <van-cell-group>
+    <van-cell is-link title="我的资料" data-url="/pages/huiyibang/personInfo/index" bindtap="pageTo" />
+    <!-- <van-cell is-link title="我的二维码" bindtap="showUserCode" /> -->
+    <van-cell wx:if="{{identity == 'boss'}}" is-link title="修改资料" data-url="/pages/merchant/index?type=edit" bindtap="pageTo" />
+    <van-cell wx:if="{{identity == 'boss'}}" is-link title="促销券操作记录" data-url="/pages/recordList/index" bindtap="pageTo" />
+    <!-- <van-cell wx:if="{{identity == 'boss'}}" is-link title="店铺转让" bindtap="toShopTransfer" /> -->
+    <!-- <van-cell wx:if="{{identity == 'boss'}}" is-link title="转让记录" bindtap="toTransferRecords" /> -->
+    <!-- <van-cell wx:if="{{identity == 'agent'}}" is-link title="邀请列表" data-url="/pages/inviteList/index" bindtap="pageTo" /> -->
+    <!-- <van-cell wx:if="{{identity == 'seller'}}" is-link title="{{is_look_sell==true?'浏览记录':'销售记录'}}" bindtap="toLookSellList" /> -->
+    <!-- <van-cell is-link title="我的促销券" data-url="/pages/myBuyCoupon/index?type=0" bindtap="pageTo" /> -->
+    <!-- <van-cell is-link title="我的代金券" data-url="/pages/myBuyCoupon/index?type=1" bindtap="pageTo" /> -->
+    <!-- <van-cell is-link title="我的代金券" bindtap="toMiniprogram" /> -->
+    <van-cell is-link title="我的记录" data-url="/pages/couponUseList/index" bindtap="pageTo" />
+    <van-cell is-link title="我的评价" data-url="/pages/evalutionList/index" bindtap="pageTo" />
+    <!-- <van-cell is-link title="我的二维码" bindtap="previewCode" /> -->
+    <!-- <van-cell icon="/assets/video.svg" is-link title="我的视频" link-type="navigateTo" url="/pages/myVideo/index" /> -->
+    <!-- <van-cell icon="/assets/protocol.svg" is-link title="法律条文与隐私协议" link-type="navigateTo" url="/pages/protocol/index" /> -->
+    <!-- 亲亲和和项目的 -->
+    <!-- <van-cell is-link title="二维码视频浏览记录" data-url="/pages/qinqinhehe/myBrowse/index" bindtap="pageTo" /> -->
+    <van-cell is-link title="修改公司信息" wx:if="{{is_boss==1}}" data-url="/pages/merchant/index?is_edit=1" bindtap="pageTo" />
+    <van-cell is-link title="申请公司" wx:else data-url="/pages/merchant/index" bindtap="pageTo" />
+    <van-cell is-link title="审批公司" wx:if="{{identity == 1}}" data-url="/pages/qinqinhehe/companyApprove/index" bindtap="pageTo" />
+    <van-cell is-link title="申请角色" wx:if="{{identity == 0}}" data-url="/pages/huiyibang/addRole/index?from=user" bindtap="pageTo" />
+    <!-- <van-cell is-link title="物流站点记录" data-url="/pages/huiyibang/farm/index" bindtap="pageTo" /> -->
+    <!-- <van-cell is-link title="扫码看物流" bindtap="scanLookLogistisc" /> -->
+    <!-- <van-cell is-link title="嘉宾登记信息规则" wx:if="{{is_boss == 1 && (identity == 1 || identity == 2)}}" data-url="/pages/huiyibang/rule/index" bindtap="pageTo" /> -->
+  </van-cell-group>
+
+  <view class="nav_list" wx:if="{{check_login == 1}}">
+    <view bindtap="clickNav" data-index="{{index}}" class="{{nav_active==index?'on':''}}" wx:for="{{nav_list}}" wx:key="index">{{item}}</view>
+  </view>
+
+  <!-- 浏览促销券 -->
+  <view class="nav_content" wx:if="{{nav_active == 0}}">
+    <view class="browse_box" wx:if="{{myBuyCouponList.length!=0}}">
+      <scroll-view class="scroll_view_H" bindscrolltolower="getLookMore" scroll-x="true" style="width: 100%">
+        <view class="scroll_item" bindtap="selectLook" data-index="{{index}}" wx:for="{{myBuyCouponList}}" wx:key="index">
+          <view class="txt">{{item.coupon_name}}</view>
+          <image src="{{item.imageNum}}" mode="widthFix"></image>
+          <!-- <button type="default" size="mini" data-item="{{item}}" catchtap="toCollect">收藏</button> -->
+        </view>
+      </scroll-view>
+    </view>
+    <view class="no_data_txt" wx:else>暂无数据</view>
+  </view>
+  <!-- 已购促销券 -->
+  <view class="nav_content" wx:if="{{nav_active == 1}}">
+    <view class="browse_box" wx:if="{{myBuyCouponList.length!=0}}">
+      <scroll-view class="scroll_view_H" bindscrolltolower="getCollectMore" scroll-x="true" style="width: 100%">
+        <view class="scroll_item" bindtap="selectCollect" data-index="{{index}}" wx:for="{{myBuyCouponList}}" wx:key="index">
+          <view class="txt">{{item.coupon_name}}</view>
+          <image src="{{item.imageNum}}" mode="widthFix"></image>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="no_data_txt" wx:else>暂无数据</view>
+  </view>
+  <!-- 已出售促销券 -->
+  <!-- <block wx:if="{{is_look_sell == true}}">
+    <scroll-view bindscrolltolower="getSellerListMore1" scroll-y="true" style="height: 600rpx;" class="nav_content" wx:if="{{identity == 'seller' && nav_active == 0}}">
+      <view class="seller_coupon_item" wx:for="{{sellerList1}}" wx:key="index">
+        <view class="seller_top"><text>{{item.couponName}}</text><text>{{item.date}}</text></view>
+        <view class="seller_bottom"><text>{{item.nickname}}</text><text>促销编号：{{item.number}}</text></view>
+      </view>
+    </scroll-view> -->
+    <!-- 已验收促销券 -->
+    <!-- <scroll-view bindscrolltolower="getSellerListMore2" scroll-y="true" style="height: 600rpx;" class="nav_content" wx:if="{{identity == 'seller' && nav_active == 1}}">
+      <view class="seller_coupon_item" wx:for="{{sellerList2}}" wx:key="index">
+        <view class="seller_top"><text>{{item.couponName}}</text><text>{{item.date}}</text></view>
+        <view class="seller_bottom"><text></text><text>促销面值：{{item.value}}</text></view>
+      </view>
+    </scroll-view>
+  </block> -->
+  <view class="{{is_showCode == true?'user_code_box show':'user_code_box'}}" bindtap="hideUserCode">
+    <image src="{{user_code}}" mode="widthFix"></image>
+  </view>
+  <!-- <view class="mine" catchtap="toPromotion"><image src="../../assets/mine.png" mode="widthFix"></image></view> -->
+</view>

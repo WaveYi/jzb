@@ -1,0 +1,14 @@
+/* pages/huiyibang/checkConferenceRoomList/progressCheck/progressCheck.wxss */
+.content{
+  width: 100%;
+}
+.list{
+  width: 100%;
+  padding: 15rpx;
+  margin-top: 20rpx;
+}
+.list_title{
+  background-color: #efefef;
+  height: 60rpx;
+  padding: 10rpx;
+}

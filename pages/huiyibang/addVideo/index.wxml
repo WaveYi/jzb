@@ -1,0 +1,18 @@
+<!--pages/huiyibang/addVideo/index.wxml-->
+<view class="form_box">
+  <form bindsubmit="submitForm">
+    <view class="form_item">
+      <text class="form_txt">视频名称</text>
+      <view class="form_content">
+        <input placeholder="请输入视频名称" value="{{name}}" data-key="name" bindinput="getInputVal"></input>
+      </view>
+    </view>
+    <view class="form_item">
+      <text class="form_txt">视频链接</text>
+      <view class="form_content">
+        <textarea name="" value="{{videoLink}}" bindinput="getInput" placeholder="请输入视频链接" cols="30" rows="10"></textarea>
+      </view>
+    </view>
+    <button form-type="submit" type="primary" style="margin-top: 80rpx;">修改</button>
+  </form>
+</view>

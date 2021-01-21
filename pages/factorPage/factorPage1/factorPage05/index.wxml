@@ -1,0 +1,6 @@
+
+<button bindtap="clcikButton" class="buttton" type="primary"></button>
+<button bindtap="clcikButton1" class="buttton" type="primary"></button>
+<button bindtap="clcikButton2" class="buttton" type="primary"></button>
+<button bindtap="clcikButton3" class="buttton" type="primary"></button>
+<button bindtap="clcikButton4" class="buttton" type="primary"></button>

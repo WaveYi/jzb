@@ -1,0 +1,27 @@
+<!--pages/myBuyCouponDetail/index.wxml-->
+<view>
+  <view class="detail_item">
+    <text class="detail_left">促销券名称</text>
+    <text class="detail_right">{{couponInfo.couponName}}</text>
+  </view>
+  <view class="detail_item">
+    <text class="detail_left">促销券售价</text>
+    <text class="detail_right">{{couponInfo.price}}</text>
+  </view>
+  <view class="detail_item">
+    <text class="detail_left">促销券面额</text>
+    <text class="detail_right">{{couponInfo.value}}</text>
+  </view>
+  <view class="detail_item">
+    <text class="detail_left">有效次数</text>
+    <text class="detail_right">{{couponInfo.count}}</text>
+  </view>
+  <view class="detail_item">
+    <text class="detail_left">使用频率</text>
+    <text class="detail_right">{{couponInfo.frequence==null?'无':couponInfo.frequence==0?'无限制':couponInfo.frequence+'/小时'}}</text>
+  </view>
+  <view class="detail_item">
+    <text class="detail_left">促销券有效时间</text>
+    <text class="detail_right">{{couponInfo.trem}}</text>
+  </view>
+</view>

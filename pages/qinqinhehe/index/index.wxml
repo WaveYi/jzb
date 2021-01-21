@@ -1,0 +1,20 @@
+<van-nav-bar custom-class="navBar" title="亲亲和和" fixed border="{{false}}" title-class="title" />
+<image class="image" src="/assets/indexBackground.png" mode="aspectFill"></image>
+<!-- <van-button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" custom-class="custom-class" class="userInfo" data-type="0">
+  <van-icon size="43rpx" name="/assets/userInfo.svg" />
+</van-button> -->
+<!-- <van-button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo1" custom-class="custom-class" bind:click='goConsumerPage' class="userInfo1" data-type="0">
+  <van-icon size="43rpx" name="/assets/protocol.svg" />
+</van-button>
+<van-button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo2" custom-class="custom-class" class="userInfo2" data-type="0">
+  <van-icon size="43rpx" name="/assets/userInfo.svg" />
+</van-button>
+<van-button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo3" custom-class="custom-class" class="userInfo3" data-type="0">
+  <van-icon size="43rpx" name="/assets/userInfo.svg" />
+</van-button>
+<van-button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo4" custom-class="custom-class" class="userInfo4" data-type="0">
+  <van-icon size="43rpx" name="/assets/userInfo.svg" />
+</van-button> -->
+<van-button bind:click="scanCode" color="#37444A" icon="scan" class="scanCode" type="primary" size="large">
+  扫码播放视频
+</van-button>
