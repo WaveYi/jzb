@@ -1,4 +1,4 @@
-<!-- <van-nav-bar title="教课帮" custom-class="navBar" fixed border="{{false}}" title-class="title" bind:click-left="onClickLeft">
+<!-- <van-nav-bar title="家政帮" custom-class="navBar" fixed border="{{false}}" title-class="title" bind:click-left="onClickLeft">
   <van-icon color="#fff" size="32rpx" name="arrow-left" slot="left" />
 </van-nav-bar> -->
 <view class="back">

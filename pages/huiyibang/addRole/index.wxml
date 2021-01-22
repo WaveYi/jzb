@@ -3,11 +3,11 @@
   <form bindsubmit="submitForm">
     <!-- <view class="title">{{title}}*</view> -->
     <view class="form_item" wx:if="{{is_form==1}}">
-      <view class="form_txt">公司名称 <text>*</text></view>
+      <view class="form_txt">培训结构<text>*</text></view>
       <view class="form_content">
         <picker mode="selector" range="{{farms}}" range-key="name" bindchange="bindPickerChange">
           <view class="picker">
-            {{farm_index?farms[farm_index].name:'请选择公司'}}
+            {{farm_index?farms[farm_index].name:'请选择培训机构'}}
           </view>
         </picker>
       </view>

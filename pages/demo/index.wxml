@@ -1,4 +1,4 @@
-<van-nav-bar title="教课帮" left-arrow="{{true}}" left-text="{{back_txt}}" custom-class="navBar" fixed border="{{false}}" title-class="title" bind:click-left="onClickLeft">
+<van-nav-bar title="家政帮" left-arrow="{{true}}" left-text="{{back_txt}}" custom-class="navBar" fixed border="{{false}}" title-class="title" bind:click-left="onClickLeft">
 </van-nav-bar>
 <video src="{{url}}" autoplay custom-cache="{{true}}" bindended="nextVideo" binderror="nextVideo" vslide-gesture>
 </video>

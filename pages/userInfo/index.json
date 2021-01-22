@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "教课帮",
+  "navigationBarTitleText": "家政帮",
   "usingComponents": {
     "van-nav-bar": "@vant/weapp/nav-bar/index",
     "van-cell": "@vant/weapp/cell/index",

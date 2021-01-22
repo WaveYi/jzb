@@ -279,7 +279,7 @@ Page({
     console.log(this.data.room_identity);
     let meeting_list = [];
     if(this.data.room_identity == 0){
-      // 学员
+      // 再就业人员
       meeting_list = [
         {
           title: '促销券管理',
@@ -330,7 +330,7 @@ Page({
         // }
       ]
     }else if(this.data.room_identity == 12){
-      // 企业
+      // 家政公司
       meeting_list = [
         {
           title: '查看评价',
@@ -346,9 +346,15 @@ Page({
       {
         title: '验证',
         icon: '/assets/hyb/hyb11.png'
+      }]
+    }else if(this.data.room_identity == 14){
+      // 消费者
+      meeting_list =[{
+        title: '申请服务',
+        icon: '/assets/hyb/hyb11.png'
       },
       {
-        title: '签到',
+        title: '评价服务',
         icon: '/assets/hyb/hyb11.png'
       }]
     }
@@ -425,20 +431,23 @@ Page({
               console.log('----log_role----'+this.data.log_identity)
               this.getRoleInit();
               if(data[0].roleType == 0){
-                array = ['学员'];
+                array = ['再就业人员'];
                 role_list = [0];
               }else if(data[0].roleType == 1){
-                array = ['课程老板','服务员','学员'];
+                array = ['课程老板','服务员','再就业人员'];
                 role_list = [1,13,0];
               }else if(data[0].roleType == 10){
-                array = ['院长','学员'];
+                array = ['院长','再就业人员'];
                 role_list = [10,0];
               }else if(data[0].roleType == 11){
-                array = ['教师','学员'];
+                array = ['教师','再就业人员'];
                 role_list = [11,0];
               }else if(data[0].roleType == 12){
-                array = ['企业','学员'];
+                array = ['家政公司','再就业人员'];
                 role_list = [12,0];
+              }else if(data[0].roleType == 14){
+                array = ['消费者','再就业人员'];
+                role_list = [14,0];
               }
             }else{
               wx.removeStorageSync('room_id');

@@ -21,8 +21,9 @@ Page({
       // {value: '0', name: '消费者'},
       {value: '10', name: '院长', checked: 'true'},
       {value: '11', name: '教师'},
-      {value: '12', name: '企业'},
+      {value: '12', name: '家政公司'},
       // {value: '13', name: '服务员'},
+      {value: '14', name: '消费者'},
     ],
     remark: '',//站点名称
     roomId: '',

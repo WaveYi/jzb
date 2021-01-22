@@ -1,4 +1,4 @@
-<van-nav-bar custom-class="navBar" title="教课帮" fixed border="{{false}}" title-class="title" />
+<van-nav-bar custom-class="navBar" title="家政帮" fixed border="{{false}}" title-class="title" />
 <image class="image" src="http://bmdh.lcpower.cn/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201126164735.png" mode="aspectFill"></image>
 <!-- <van-button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" custom-class="custom-class" class="userInfo" data-type="0">
   <van-icon size="43rpx" name="/assets/userInfo.svg" />

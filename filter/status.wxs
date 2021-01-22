@@ -38,10 +38,10 @@
   },
 
   roleStatus: function(status){
-    // 角色 0 学员 1 课程老板 10 院长 11 教师 12 企业 13 服务员
+    // 角色 0 再就业人员 1 课程老板 10 院长 11 教师 12 家政公司 13 服务员 14 消费者
     var status_txt = '';
     if(status == '0' || status == null){
-      status_txt = '学员';
+      status_txt = '再就业人员';
     }else if(status == '1'){
       status_txt = '课程老板';
     }else if(status == '10'){
@@ -49,9 +49,11 @@
     }else if(status == '11'){
       status_txt = '教师';
     }else if(status == '12'){
-      status_txt = '企业';
+      status_txt = '家政公司';
     }else if(status == '13'){
       status_txt = '服务员';
+    }else if(status == '14'){
+      status_txt = '消费者'
     }
     return status_txt;
   },

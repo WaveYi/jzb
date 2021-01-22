@@ -6,7 +6,7 @@ import {
   get_company_info
 } from '../../../api/qqhh_user.js'
 import publicFun from '../../../utils/public.js'
-// var requestUrl = 'http://192.168.1.2:8094'
+// var requestUrl = 'http://192.168.1.2:8095'
 var requestUrl = 'https://e.3p3.top'
 Page({
 
@@ -202,19 +202,19 @@ Page({
           type: ''
         },
         success (imgRes){
-          if(JSON.parse(imgRes.data).code == 200){
+          if(JSON.parse(imgRes.data).code == 200){
             let img_pic = JSON.parse(imgRes.data).data;
             that.setData({
               back_img: img_pic,
               is_back: 1
             })
-          }else{
-            wx.showModal({
-              title: "提示",
-              content: JSON.parse(imgRes.data).msg || JSON.parse(imgRes.data).message,
-              showCancel: false
-            })
-          }
+          }else{
+            wx.showModal({
+              title: "提示",
+              content: JSON.parse(imgRes.data).msg || JSON.parse(imgRes.data).message,
+              showCancel: false
+            })
+          }
         }
       })
     })
@@ -233,19 +233,19 @@ Page({
           type: ''
         },
         success (imgRes){
-          if(JSON.parse(imgRes.data).code == 200){
+          if(JSON.parse(imgRes.data).code == 200){
             let img_pic = JSON.parse(imgRes.data).data;
             that.setData({
               card_img: img_pic,
               is_card: 1
             })
-          }else{
-            wx.showModal({
-              title: "提示",
-              content: JSON.parse(imgRes.data).msg || JSON.parse(imgRes.data).message,
-              showCancel: false
-            })
-          }
+          }else{
+            wx.showModal({
+              title: "提示",
+              content: JSON.parse(imgRes.data).msg || JSON.parse(imgRes.data).message,
+              showCancel: false
+            })
+          }
         }
       })
     })
@@ -264,19 +264,19 @@ Page({
           type: ''
         },
         success (imgRes){
-          if(JSON.parse(imgRes.data).code == 200){
+          if(JSON.parse(imgRes.data).code == 200){
             let img_pic = JSON.parse(imgRes.data).data;
             that.setData({
               book_img: img_pic,
               is_book: 1
             })
-          }else{
-            wx.showModal({
-              title: "提示",
-              content: JSON.parse(imgRes.data).msg || JSON.parse(imgRes.data).message,
-              showCancel: false
-            })
-          }
+          }else{
+            wx.showModal({
+              title: "提示",
+              content: JSON.parse(imgRes.data).msg || JSON.parse(imgRes.data).message,
+              showCancel: false
+            })
+          }
         }
       })
     })
